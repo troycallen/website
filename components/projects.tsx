@@ -6,7 +6,7 @@ export function Projects() {
     {
       title: "Marvel Rivals Analytics",
       description:
-        "Analytics platform that processes 100,000+ daily matches and improves player win rates by 15% using Nash equilibrium concepts and GPU-accelerated game tree analysis.",
+        "Analytics platform that processes 100,000+ daily matches and improves player win rates using Nash equilibrium concepts and GPU-accelerated game tree analysis.",
       technologies: ["Python", "FastAPI", "PostgreSQL", "Redis", "React", "Game Theory"],
       links: {
         github: "https://github.com/troycallen/marvel-ML",
@@ -25,7 +25,7 @@ export function Projects() {
     {
       title: "Hitsplat Custom",
       description:
-        "Popular Java plugin for Old School RuneScape with 2,000+ active users that enhances gaming experience through customization options.",
+        "Popular Java plugin for Old School RuneScape with 2,000+ active users that dynamically changes hitsplat colors based on attack styles.",
       technologies: ["Java", "RuneLite API", "Gradle", "Git"],
       links: {
         github: "#",
@@ -34,7 +34,7 @@ export function Projects() {
     {
       title: "MeetCode (WIP)",
       description:
-        "Collaborative coding platform for technical interview practice that allows users to code together in real-time while solving algorithm problems.",
+        "Collaborative version of leetcode that allows users to add friends, code together, and track each other's progress.",
       technologies: ["React", "Node.js", "Socket.io", "Monaco Editor", "Docker"],
       links: {
         github: "https://github.com/troycallen/meetcode",
