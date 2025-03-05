@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Github, Linkedin, Mail, Phone } from "lucide-react"
 import Link from "next/link"
 
@@ -31,6 +31,9 @@ export function Hero() {
     <p key="whoami-cmd"><span className="text-secondary">troy@portfolio:~$</span> whoami</p>,
     <p key="whoami-output">Troy Allen</p>,
   ])
+  
+  // Reference to terminal output div for auto-scrolling
+  const terminalOutputRef = useRef<HTMLDivElement>(null);
 
   // Define file system structure
   const fileSystem: FileSystem = {
@@ -44,7 +47,7 @@ export function Hero() {
     },
     "~/projects": {
       type: "dir",
-      contents: ["portfolio.md", "project1.md", "project2.md"]
+      contents: ["meetcode.md", "marvel_meta.md", "sebderm_safe.md", "hitsplat_custom.md"]
     },
     "~/education": {
       type: "dir",
@@ -66,25 +69,29 @@ export function Hero() {
       type: "file",
       content: "Graduate student @ GT. Computer programmer and eternal student.\nI love algorithms, machine learning, and programming languages.\nSpent a lot of time doing research, but now I'm just building things that can help people directly.\nFeel free to reach out! I'm always looking for new opportunities."
     },
-    "~/projects/portfolio.md": {
+    "~/projects/meetcode.md": {
       type: "file",
-      content: "# Portfolio Website\nA Next.js portfolio with interactive terminal interface.\nBuilt with Next.js, React, and Tailwind CSS."
+      content: "# MeetCode (WIP)\nGoogle Chrome extension that allows users to add friends on LeetCode, code together in real-time, and track each other's progress.\n\nTechnologies: JavaScript, Chrome Extension API, WebSockets, React, Firebase\n\nGitHub: https://github.com/troycallen/meetcode"
     },
-    "~/projects/project1.md": {
+    "~/projects/marvel_meta.md": {
       type: "file",
-      content: "# Project 1\n[Add your project details here]"
+      content: "# Marvel Meta\nAnalytics platform that processes 100,000+ daily matches and improves player win rates using Nash equilibrium concepts and GPU-accelerated game tree analysis.\n\nTechnologies: Python, FastAPI, PostgreSQL, Redis, React, Game Theory\n\nGitHub: https://github.com/troycallen/marvel-ML"
     },
-    "~/projects/project2.md": {
+    "~/projects/sebderm_safe.md": {
       type: "file",
-      content: "# Project 2\n[Add your project details here]"
+      content: "# SebDerm Safe\nWeb application that helps people with seborrheic dermatitis find safe skincare products by analyzing ingredients and flagging potential irritants.\n\nTechnologies: React, Node.js, Express, MongoDB, AWS\n\nGitHub: https://github.com/troycallen/sebderm-safe"
+    },
+    "~/projects/hitsplat_custom.md": {
+      type: "file",
+      content: "# Hitsplat Custom\nPopular Java plugin for Old School RuneScape with 2,000+ active users that dynamically changes hitsplat colors based on attack styles.\n\nTechnologies: Java, RuneLite API, Gradle, Git"
     },
     "~/education/georgia_tech.md": {
       type: "file",
-      content: "# Georgia Tech\nMS Computer Science & MS Analytics\nGraduation: Expected 2025"
+      content: "# Georgia Tech\nMS Computer Science & MS Analytics\nGraduation: Expected 2025\nRelevant Coursework: Advanced Algorithms, Machine Learning, Distributed Systems"
     },
     "~/education/florida_state.md": {
       type: "file",
-      content: "# Florida State University\nBS Computer Science\nGraduation: 2023"
+      content: "# Florida State University\nBS Computer Science\nGraduation: 2021\nRelevant Coursework: Data Structures, Algorithms, Operating Systems, Computer Architecture"
     }
   };
 
@@ -100,6 +107,7 @@ export function Hero() {
         <p>- whoami: Display name</p>
         <p>- clear: Clear terminal</p>
         <p>- open [section]: Navigate to website section</p>
+        <p>- history: Show command history</p>
       </div>
     ),
     whoami: () => <p>Troy Allen</p>,
@@ -186,22 +194,66 @@ export function Hero() {
       
       const section = args[0];
       
-      // List of valid sections
-      const validSections = ["home", "experience", "projects", "education", "skills"];
-      
-      if (!validSections.includes(section)) {
-        return <p>open: invalid section name. Valid sections are: {validSections.join(", ")}</p>;
-      }
-      
       // Use setTimeout to ensure this runs after the current render cycle
       setTimeout(() => {
-        const element = document.getElementById(section);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+        try {
+          // Try direct ID first
+          let element = document.getElementById(section);
+          
+          // If not found, try finding by other means
+          if (!element) {
+            // Try finding by section name in different formats
+            const possibleIds = [
+              section,
+              section.toLowerCase(),
+              `section-${section}`,
+              `${section}-section`
+            ];
+            
+            for (const id of possibleIds) {
+              element = document.getElementById(id);
+              if (element) break;
+            }
+            
+            // If still not found, try finding by heading text
+            if (!element) {
+              const headings = document.querySelectorAll('h1, h2, h3');
+              for (let i = 0; i < headings.length; i++) {
+                const heading = headings[i];
+                if (heading.textContent?.toLowerCase().includes(section.toLowerCase())) {
+                  element = heading as HTMLElement;
+                  break;
+                }
+              }
+            }
+          }
+          
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            return;
+          }
+          
+          // If we get here, we couldn't find the section
+          console.log(`Could not find section: ${section}`);
+        } catch (error) {
+          console.error("Error navigating to section:", error);
         }
-      }, 10);
+      }, 100);
       
-      return <p>Navigating to {section} section...</p>;
+      return <p>Attempting to navigate to {section} section...</p>;
+    },
+    history: () => {
+      if (history.length === 0) {
+        return <p>No commands in history</p>;
+      }
+      
+      return (
+        <div>
+          {history.map((cmd, index) => (
+            <p key={index}>{index + 1}: {cmd}</p>
+          ))}
+        </div>
+      );
     }
   };
 
@@ -247,6 +299,9 @@ export function Hero() {
     e.preventDefault();
     if (!input.trim()) return;
     
+    // Add to history
+    setHistory([...history, input]);
+    
     // Special handling for clear command
     if (input.trim().toLowerCase() === "clear") {
       setCommandOutput([]);
@@ -265,6 +320,13 @@ export function Hero() {
     setCommandOutput(newOutput);
     setInput("");
   };
+
+  // Auto-scroll terminal to bottom when output changes
+  useEffect(() => {
+    if (terminalOutputRef.current) {
+      terminalOutputRef.current.scrollTop = terminalOutputRef.current.scrollHeight;
+    }
+  }, [commandOutput]);
 
   useEffect(() => {
     setIsVisible(true);
@@ -335,7 +397,10 @@ export function Hero() {
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
           </div>
-          <div className="font-mono text-sm space-y-2 flex-1 overflow-y-auto mb-2">
+          <div 
+            ref={terminalOutputRef}
+            className="font-mono text-sm space-y-2 flex-1 overflow-y-auto mb-2 terminal-output"
+          >
             {commandOutput.map((output, index) => (
               <div key={index}>{output}</div>
             ))}
