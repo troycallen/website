@@ -6,15 +6,14 @@ export function Experience() {
       location: "Atlanta, GA",
       period: "Dec 2024 - Present",
       description:
-        "Developing scalable data labeling systems and optimizing vector embedding processes using CUDA and RAPIDS cuML. Implementing hybrid search systems with ElasticSearch and Milvus.",
-    },
+        "Developing scalable systems, optimizing backend search performance, and coordinating Docker deployments.",
     {
       title: "Software Engineer Intern",
       company: "Shepherd Center",
       location: "Atlanta, GA",
       period: "May 2024 - Sep 2024",
       description:
-        "Built predictive models for pressure ulcer detection with PyTorch. Developed API systems with Docker and Flask for medical predictions.",
+        "Built predictive models for pressure ulcer detection with PyTorch, deployed with Docker and Flask for real-time predictions.",
     },
     {
       title: "Research Assistant",
@@ -22,14 +21,14 @@ export function Experience() {
       location: "Tallahassee, FL",
       period: "Jan 2019 - May 2022",
       description:
-        "Designed database schema for shooting incident research. Created OCR/NLP pipeline for document processing and optimized patrol routes using TSP algorithms.",
+        "Conducting research on Mass Shootings, Natural Language Processing, and graph algorithms like Traveling Salesman Problem.",
     },
     {
       title: "Head Teaching Assistant",
       company: "Florida State University",
       location: "Tallahassee, FL",
       period: "Jul 2020 - Dec 2020",
-      description: "Developed and executed curriculum as sole teaching assistant for computer science courses.",
+      description: "Developed and executed curriculum as sole teaching assistant for C++ class during the COVID-19 pandemic.",
     },
   ]
 

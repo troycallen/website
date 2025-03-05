@@ -4,7 +4,16 @@ import Link from "next/link"
 export function Projects() {
   const projects = [
     {
-      title: "Marvel Rivals Analytics",
+      title: "MeetCode (WIP)",
+      description:
+        "Collaborative version of leetcode that allows users to add friends, code together, and track each other's progress.",
+      technologies: ["React", "Node.js", "Socket.io", "Monaco Editor", "Docker"],
+      links: {
+        github: "https://github.com/troycallen/meetcode",
+      },
+    },
+    {
+      title: "Marvel Meta",
       description:
         "Analytics platform that processes 100,000+ daily matches and improves player win rates using Nash equilibrium concepts and GPU-accelerated game tree analysis.",
       technologies: ["Python", "FastAPI", "PostgreSQL", "Redis", "React", "Game Theory"],
@@ -30,16 +39,7 @@ export function Projects() {
       links: {
         github: "#",
       },
-    },
-    {
-      title: "MeetCode (WIP)",
-      description:
-        "Collaborative version of leetcode that allows users to add friends, code together, and track each other's progress.",
-      technologies: ["React", "Node.js", "Socket.io", "Monaco Editor", "Docker"],
-      links: {
-        github: "https://github.com/troycallen/meetcode",
-      },
-    },
+    }
   ]
 
   return (
