@@ -26,7 +26,10 @@ export function Hero() {
               <span className="text-secondary">$</span> I love algorithms, machine learning, and programming languages.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">$</span> I spent a lot of time doing research in the past, but now I'm more interested in building things that can help people directly.
+              <span className="text-secondary">$</span> Did a lot of research in the past, but now I'm just building things.
+            </p>
+            <p className="text-muted-foreground">
+              <span className="text-secondary">$</span> Feel free to reach out. I'm always looking for new opportunities.
             </p>
           </div>
 
