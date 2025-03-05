@@ -7,6 +7,7 @@ export function Experience() {
       period: "Dec 2024 - Present",
       description:
         "Developing scalable systems, optimizing backend search performance, and coordinating Docker deployments.",
+    },
     {
       title: "Software Engineer Intern",
       company: "Shepherd Center",
