@@ -4,10 +4,20 @@ import Link from "next/link"
 export function Projects() {
   const projects = [
     {
+      title: "Portfolio Website",
+      description:
+        "Personal portfolio website built with Next.js featuring a fully interactive Unix-like terminal with file system navigation and command history.",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+      links: {
+        github: "https://github.com/troycallen/website",
+        demo: "https://troycallen.com",
+      },
+    },
+    {
       title: "MeetCode (WIP)",
       description:
-        "Collaborative version of leetcode that allows users to add friends, code together, and track each other's progress.",
-      technologies: ["React", "Node.js", "Socket.io", "Monaco Editor", "Docker"],
+        "Google Chrome extension that allows users to add friends on LeetCode, code together in real-time, and track each other's progress.",
+      technologies: ["JavaScript", "Chrome Extension API", "WebSockets", "React", "Firebase"],
       links: {
         github: "https://github.com/troycallen/meetcode",
       },
