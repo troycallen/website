@@ -6,10 +6,109 @@ import Link from "next/link"
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
+  const [input, setInput] = useState("")
+  const [history, setHistory] = useState<string[]>([])
+  const [commandOutput, setCommandOutput] = useState<JSX.Element[]>([
+    <p key="welcome">Welcome to Troy Allen's terminal. Type 'help' for available commands.</p>,
+    <p key="whoami-cmd"><span className="text-secondary">$</span> whoami</p>,
+    <p key="whoami-output">Troy Allen</p>,
+  ])
+
+  // Define available commands and their outputs
+  const commands: Record<string, () => JSX.Element | JSX.Element[]> = {
+    help: () => (
+      <div>
+        <p>Available commands:</p>
+        <p>- whoami: Display name</p>
+        <p>- skills: List technical skills</p>
+        <p>- status: Show current status</p>
+        <p>- education: Show education history</p>
+        <p>- contact: Display contact information</p>
+        <p>- projects: List notable projects</p>
+        <p>- clear: Clear terminal</p>
+      </div>
+    ),
+    whoami: () => <p>Troy Allen</p>,
+    skills: () => <p>Python, C++, Java, JavaScript, React, FastAPI, Docker, AWS</p>,
+    status: () => <p>Currently: Software Engineer Intern @ Trideum Corporation</p>,
+    education: () => (
+      <div>
+        <p>Georgia Tech - MS Computer Science & MS Analytics</p>
+        <p>Florida State - BS Computer Science</p>
+      </div>
+    ),
+    contact: () => (
+      <div>
+        <p>Email: troycallen22@gmail.com</p>
+        <p>Phone: 407-456-0344</p>
+        <p>LinkedIn: linkedin.com/in/troycallen</p>
+        <p>GitHub: github.com/troycallen</p>
+      </div>
+    ),
+    projects: () => (
+      <div>
+        <p>Visit the projects section for more details.</p>
+        <p>Type 'open projects' to navigate there.</p>
+      </div>
+    ),
+    clear: () => {
+      setCommandOutput([]);
+      return <></>;
+    },
+  };
+
+  // Handle special commands
+  const handleSpecialCommands = (cmd: string) => {
+    if (cmd.startsWith('open ')) {
+      const section = cmd.split(' ')[1];
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        return <p>Navigating to {section}...</p>;
+      } else {
+        return <p>Section '{section}' not found.</p>;
+      }
+    }
+    return null;
+  };
+
+  // Handle command execution
+  const executeCommand = (cmd: string) => {
+    setHistory([...history, cmd]);
+    
+    // Check for special commands first
+    const specialOutput = handleSpecialCommands(cmd);
+    if (specialOutput) {
+      return specialOutput;
+    }
+    
+    // Check for regular commands
+    if (commands[cmd]) {
+      return commands[cmd]();
+    }
+    
+    // Command not found
+    return <p>Command not found: {cmd}. Type 'help' for available commands.</p>;
+  };
+
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    
+    const newOutput = [
+      ...commandOutput,
+      <p key={`cmd-${commandOutput.length}`}><span className="text-secondary">$</span> {input}</p>,
+      <div key={`output-${commandOutput.length}`}>{executeCommand(input.toLowerCase())}</div>
+    ];
+    
+    setCommandOutput(newOutput);
+    setInput("");
+  };
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   return (
     <section id="home" className="py-12 md:py-20">
@@ -26,10 +125,10 @@ export function Hero() {
               <span className="text-secondary">$</span> I love algorithms, machine learning, and programming languages.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">$</span> Did a lot of research in the past, but now I'm just building things.
+              <span className="text-secondary">$</span> Spent a lot of time doing research, but now I'm just building things that can help people directly.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">$</span> Feel free to reach out. I'm always looking for new opportunities.
+              <span className="text-secondary">$</span> Feel free to reach out! I'm always looking for new opportunities.
             </p>
           </div>
 
@@ -67,7 +166,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="terminal-section overflow-hidden">
+        <div className="terminal-section overflow-hidden bg-black/80 rounded-lg border border-muted p-4 h-[400px] flex flex-col">
           <div className="flex items-center justify-between mb-2">
             <div className="font-mono text-muted-foreground">terminal</div>
             <div className="flex gap-2">
@@ -76,28 +175,22 @@ export function Hero() {
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
           </div>
-          <div className="font-mono text-sm space-y-2">
-            <p>
-              <span className="text-secondary">$</span> whoami
-            </p>
-            <p>Troy Allen</p>
-            <p>
-              <span className="text-secondary">$</span> cat skills.txt
-            </p>
-            <p>Python, C++, Java, JavaScript, React, FastAPI, Docker, AWS</p>
-            <p>
-              <span className="text-secondary">$</span> cat status.txt
-            </p>
-            <p>Currently: Software Engineer Intern @ Trideum Corporation</p>
-            <p>
-              <span className="text-secondary">$</span> education
-            </p>
-            <p>Georgia Tech - MS Computer Science & MS Analytics</p>
-            <p>Florida State - BS Computer Science</p>
-            <p>
-              <span className="text-secondary">$</span> _<span className="animate-terminal-blink">|</span>
-            </p>
+          <div className="font-mono text-sm space-y-2 flex-1 overflow-y-auto mb-2">
+            {commandOutput.map((output, index) => (
+              <div key={index}>{output}</div>
+            ))}
           </div>
+          <form onSubmit={handleSubmit} className="flex items-center">
+            <span className="text-secondary mr-2">$</span>
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="flex-1 bg-transparent border-none outline-none font-mono text-sm"
+              autoFocus
+              aria-label="Terminal input"
+            />
+          </form>
         </div>
       </div>
     </section>
