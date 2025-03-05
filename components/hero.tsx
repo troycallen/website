@@ -20,10 +20,10 @@ export function Hero() {
           <div className="mb-6 font-mono">
             <p className="text-xl mb-2">Software Engineer</p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">$</span> Graduate student @ Georgia Tech. Computer programmer and eternal student.
+              <span className="text-secondary">$</span> Graduate student @ GT. Computer programmer and eternal student.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">$</span> I love algorithms, machine learning, programming languages, and scalable systems.
+              <span className="text-secondary">$</span> I love algorithms, machine learning, and programming languages.
             </p>
             <p className="text-muted-foreground">
               <span className="text-secondary">$</span> I spent a lot of time doing research in the past, but now I'm more interested in building things that can help people directly.
