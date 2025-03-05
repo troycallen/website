@@ -192,55 +192,34 @@ export function Hero() {
         return <p>open: missing section name</p>;
       }
       
-      const section = args[0];
+      const section = args[0].toLowerCase();
       
-      // Use setTimeout to ensure this runs after the current render cycle
+      // Simple mapping of section names to ensure we have the right IDs
+      const sectionMap: Record<string, string> = {
+        "home": "home",
+        "about": "home",
+        "experience": "experience",
+        "projects": "projects",
+        "education": "education",
+        "skills": "skills",
+        "contact": "home"
+      };
+      
+      // Check if the section name is valid
+      if (!sectionMap[section]) {
+        return <p>open: &apos;{section}&apos; is not a valid section. Try one of: home, about, experience, projects, education, skills, contact</p>;
+      }
+      
+      // Get the correct section ID
+      const sectionId = sectionMap[section];
+      
+      // Use the simplest possible approach - change the URL hash
+      // This will trigger the browser's built-in scroll to anchor behavior
       setTimeout(() => {
-        try {
-          // Try direct ID first
-          let element = document.getElementById(section);
-          
-          // If not found, try finding by other means
-          if (!element) {
-            // Try finding by section name in different formats
-            const possibleIds = [
-              section,
-              section.toLowerCase(),
-              `section-${section}`,
-              `${section}-section`
-            ];
-            
-            for (const id of possibleIds) {
-              element = document.getElementById(id);
-              if (element) break;
-            }
-            
-            // If still not found, try finding by heading text
-            if (!element) {
-              const headings = document.querySelectorAll('h1, h2, h3');
-              for (let i = 0; i < headings.length; i++) {
-                const heading = headings[i];
-                if (heading.textContent?.toLowerCase().includes(section.toLowerCase())) {
-                  element = heading as HTMLElement;
-                  break;
-                }
-              }
-            }
-          }
-          
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            return;
-          }
-          
-          // If we get here, we couldn't find the section
-          console.log(`Could not find section: ${section}`);
-        } catch (error) {
-          console.error("Error navigating to section:", error);
-        }
+        window.location.hash = sectionId;
       }, 100);
       
-      return <p>Attempting to navigate to {section} section...</p>;
+      return <p>Navigating to {section} section...</p>;
     },
     history: () => {
       if (history.length === 0) {
