@@ -4,91 +4,242 @@ import { useEffect, useState } from "react"
 import { Github, Linkedin, Mail, Phone } from "lucide-react"
 import Link from "next/link"
 
+// Define file system types
+type FileContent = {
+  type: "file";
+  content: string;
+}
+
+type DirContent = {
+  type: "dir";
+  contents: string[];
+}
+
+type FileSystemItem = FileContent | DirContent;
+
+type FileSystem = {
+  [path: string]: FileSystemItem;
+}
+
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
   const [input, setInput] = useState("")
   const [history, setHistory] = useState<string[]>([])
+  const [currentDir, setCurrentDir] = useState("~")
   const [commandOutput, setCommandOutput] = useState<JSX.Element[]>([
-    <p key="welcome">Welcome to Troy Allen's terminal. Type 'help' for available commands.</p>,
-    <p key="whoami-cmd"><span className="text-secondary">$</span> whoami</p>,
+    <p key="welcome">Welcome to Troy Allen&apos;s terminal. Type &apos;help&apos; for available commands.</p>,
+    <p key="whoami-cmd"><span className="text-secondary">troy@portfolio:~$</span> whoami</p>,
     <p key="whoami-output">Troy Allen</p>,
   ])
 
+  // Define file system structure
+  const fileSystem: FileSystem = {
+    "~": {
+      type: "dir",
+      contents: ["about", "skills.txt", "status.txt", "projects", "education", "contact.txt"]
+    },
+    "~/about": {
+      type: "dir",
+      contents: ["readme.md"]
+    },
+    "~/projects": {
+      type: "dir",
+      contents: ["portfolio.md", "project1.md", "project2.md"]
+    },
+    "~/education": {
+      type: "dir",
+      contents: ["georgia_tech.md", "florida_state.md"]
+    },
+    "~/skills.txt": {
+      type: "file",
+      content: "Python, C++, Java, JavaScript, React, FastAPI, Docker, AWS"
+    },
+    "~/status.txt": {
+      type: "file",
+      content: "Currently: Software Engineer Intern @ Trideum Corporation"
+    },
+    "~/contact.txt": {
+      type: "file",
+      content: "Email: troycallen22@gmail.com\nPhone: 407-456-0344\nLinkedIn: linkedin.com/in/troycallen\nGitHub: github.com/troycallen"
+    },
+    "~/about/readme.md": {
+      type: "file",
+      content: "Graduate student @ GT. Computer programmer and eternal student.\nI love algorithms, machine learning, and programming languages.\nSpent a lot of time doing research, but now I'm just building things that can help people directly.\nFeel free to reach out! I'm always looking for new opportunities."
+    },
+    "~/projects/portfolio.md": {
+      type: "file",
+      content: "# Portfolio Website\nA Next.js portfolio with interactive terminal interface.\nBuilt with Next.js, React, and Tailwind CSS."
+    },
+    "~/projects/project1.md": {
+      type: "file",
+      content: "# Project 1\n[Add your project details here]"
+    },
+    "~/projects/project2.md": {
+      type: "file",
+      content: "# Project 2\n[Add your project details here]"
+    },
+    "~/education/georgia_tech.md": {
+      type: "file",
+      content: "# Georgia Tech\nMS Computer Science & MS Analytics\nGraduation: Expected 2025"
+    },
+    "~/education/florida_state.md": {
+      type: "file",
+      content: "# Florida State University\nBS Computer Science\nGraduation: 2023"
+    }
+  };
+
   // Define available commands and their outputs
-  const commands: Record<string, () => JSX.Element | JSX.Element[]> = {
+  const commands: Record<string, (args: string[]) => JSX.Element | JSX.Element[]> = {
     help: () => (
       <div>
         <p>Available commands:</p>
+        <p>- ls: List directory contents</p>
+        <p>- cd [dir]: Change directory</p>
+        <p>- cat [file]: Display file contents</p>
+        <p>- pwd: Print working directory</p>
         <p>- whoami: Display name</p>
-        <p>- skills: List technical skills</p>
-        <p>- status: Show current status</p>
-        <p>- education: Show education history</p>
-        <p>- contact: Display contact information</p>
-        <p>- projects: List notable projects</p>
         <p>- clear: Clear terminal</p>
+        <p>- open [section]: Navigate to website section</p>
       </div>
     ),
     whoami: () => <p>Troy Allen</p>,
-    skills: () => <p>Python, C++, Java, JavaScript, React, FastAPI, Docker, AWS</p>,
-    status: () => <p>Currently: Software Engineer Intern @ Trideum Corporation</p>,
-    education: () => (
-      <div>
-        <p>Georgia Tech - MS Computer Science & MS Analytics</p>
-        <p>Florida State - BS Computer Science</p>
-      </div>
-    ),
-    contact: () => (
-      <div>
-        <p>Email: troycallen22@gmail.com</p>
-        <p>Phone: 407-456-0344</p>
-        <p>LinkedIn: linkedin.com/in/troycallen</p>
-        <p>GitHub: github.com/troycallen</p>
-      </div>
-    ),
-    projects: () => (
-      <div>
-        <p>Visit the projects section for more details.</p>
-        <p>Type 'open projects' to navigate there.</p>
-      </div>
-    ),
-    clear: () => {
-      setCommandOutput([]);
+    pwd: () => <p>{currentDir}</p>,
+    ls: (args) => {
+      const path = args.length > 0 ? resolvePath(args[0]) : currentDir;
+      
+      if (!fileSystem[path] || fileSystem[path].type !== "dir") {
+        return <p>ls: cannot access &apos;{args[0]}&apos;: No such directory</p>;
+      }
+      
+      const dirContent = fileSystem[path] as DirContent;
+      const contents = dirContent.contents;
+      return (
+        <div className="grid grid-cols-3 gap-2">
+          {contents.map((item: string, index: number) => {
+            const fullPath = path === "~" ? `~/${item}` : `${path}/${item}`;
+            const isDir = fileSystem[fullPath] && fileSystem[fullPath].type === "dir";
+            return (
+              <p key={index} className={isDir ? "text-blue-400" : ""}>
+                {item}{isDir ? "/" : ""}
+              </p>
+            );
+          })}
+        </div>
+      );
+    },
+    cd: (args) => {
+      if (args.length === 0 || args[0] === "~") {
+        setCurrentDir("~");
+        return <></>;
+      }
+      
+      const path = resolvePath(args[0]);
+      
+      if (!fileSystem[path]) {
+        return <p>cd: no such directory: {args[0]}</p>;
+      }
+      
+      if (fileSystem[path].type !== "dir") {
+        return <p>cd: not a directory: {args[0]}</p>;
+      }
+      
+      setCurrentDir(path);
       return <></>;
     },
+    cat: (args) => {
+      if (args.length === 0) {
+        return <p>cat: missing file operand</p>;
+      }
+      
+      const path = resolvePath(args[0]);
+      
+      if (!fileSystem[path]) {
+        return <p>cat: {args[0]}: No such file or directory</p>;
+      }
+      
+      if (fileSystem[path].type === "dir") {
+        return <p>cat: {args[0]}: Is a directory</p>;
+      }
+      
+      // Split content by newlines and render each line
+      const fileContent = fileSystem[path] as FileContent;
+      const content = fileContent.content;
+      return (
+        <div>
+          {content.split('\n').map((line: string, index: number) => (
+            <p key={index}>{line}</p>
+          ))}
+        </div>
+      );
+    },
+    clear: (args) => {
+      // Clear the terminal immediately
+      setTimeout(() => {
+        setCommandOutput([]);
+      }, 0);
+      return <></>;
+    },
+    open: (args) => {
+      if (args.length === 0) {
+        return <p>open: missing section name</p>;
+      }
+      
+      const section = args[0];
+      
+      // List of valid sections
+      const validSections = ["home", "experience", "projects", "education", "skills"];
+      
+      if (!validSections.includes(section)) {
+        return <p>open: invalid section name. Valid sections are: {validSections.join(", ")}</p>;
+      }
+      
+      // Use setTimeout to ensure this runs after the current render cycle
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 10);
+      
+      return <p>Navigating to {section} section...</p>;
+    }
   };
 
-  // Handle special commands
-  const handleSpecialCommands = (cmd: string) => {
-    if (cmd.startsWith('open ')) {
-      const section = cmd.split(' ')[1];
-      const element = document.getElementById(section);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        return <p>Navigating to {section}...</p>;
-      } else {
-        return <p>Section '{section}' not found.</p>;
-      }
+  // Helper function to resolve paths
+  const resolvePath = (path: string): string => {
+    if (path.startsWith("~")) {
+      return path;
     }
-    return null;
+    
+    if (path.startsWith("/")) {
+      return "~" + path;
+    }
+    
+    if (path === "..") {
+      if (currentDir === "~") return "~";
+      return currentDir.split("/").slice(0, -1).join("/") || "~";
+    }
+    
+    return currentDir === "~" ? `~/${path}` : `${currentDir}/${path}`;
   };
 
   // Handle command execution
-  const executeCommand = (cmd: string) => {
-    setHistory([...history, cmd]);
+  const executeCommand = (cmdLine: string) => {
+    const parts = cmdLine.trim().split(" ");
+    const cmd = parts[0].toLowerCase();
+    const args = parts.slice(1);
     
-    // Check for special commands first
-    const specialOutput = handleSpecialCommands(cmd);
-    if (specialOutput) {
-      return specialOutput;
+    if (cmd === "clear") {
+      setCommandOutput([]);
+      return <></>;
     }
     
-    // Check for regular commands
     if (commands[cmd]) {
-      return commands[cmd]();
+      return commands[cmd](args);
     }
     
     // Command not found
-    return <p>Command not found: {cmd}. Type 'help' for available commands.</p>;
+    return <p>Command not found: {cmd}. Type &apos;help&apos; for available commands.</p>;
   };
 
   // Handle form submission
@@ -96,10 +247,19 @@ export function Hero() {
     e.preventDefault();
     if (!input.trim()) return;
     
+    // Special handling for clear command
+    if (input.trim().toLowerCase() === "clear") {
+      setCommandOutput([]);
+      setInput("");
+      return;
+    }
+    
     const newOutput = [
       ...commandOutput,
-      <p key={`cmd-${commandOutput.length}`}><span className="text-secondary">$</span> {input}</p>,
-      <div key={`output-${commandOutput.length}`}>{executeCommand(input.toLowerCase())}</div>
+      <p key={`cmd-${commandOutput.length}`}>
+        <span className="text-secondary">troy@portfolio:{currentDir}$</span> {input}
+      </p>,
+      <div key={`output-${commandOutput.length}`}>{executeCommand(input)}</div>
     ];
     
     setCommandOutput(newOutput);
@@ -181,7 +341,7 @@ export function Hero() {
             ))}
           </div>
           <form onSubmit={handleSubmit} className="flex items-center">
-            <span className="text-secondary mr-2">$</span>
+            <span className="text-secondary mr-2">troy@portfolio:{currentDir}$</span>
             <input
               type="text"
               value={input}
