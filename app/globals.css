@@ -2,26 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --primary: 250 95% 65%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 190 90% 50%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 280 75% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --border: 240 5% 25%;
+    --input: 240 5% 25%;
+
+    --ring: 250 95% 65%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .terminal-text {
+    @apply font-mono text-foreground;
+  }
+
+  .terminal-section {
+    @apply border border-border rounded-md p-4 bg-muted/30 backdrop-blur-sm;
+  }
+
+  .terminal-header {
+    @apply font-mono text-primary font-bold;
+  }
+
+  .terminal-link {
+    @apply text-secondary hover:text-secondary/80 transition-colors duration-200 underline underline-offset-4;
+  }
+
+  .terminal-accent {
+    @apply text-accent font-bold;
+  }
+
+  .ascii-container {
+    @apply font-mono text-xs leading-none whitespace-pre opacity-70;
   }
 }
+
