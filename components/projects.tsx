@@ -4,6 +4,15 @@ import Link from "next/link"
 export function Projects() {
   const projects = [
     {
+      title: "Memory Allocator",
+      description:
+        "Dynamic mem allocator optimized for cache efficiency with bitwise instrinsics, prefetching, and metadata compression.",
+      technologies: ["C++, Assembly, Cache Optimization"],
+      links: {
+        github: "#",
+      },
+    },
+    {
       title: "Portfolio Website",
       description:
         "Personal portfolio website built with Next.js featuring a fully interactive Unix-like terminal with file system navigation and command history.",
@@ -14,7 +23,7 @@ export function Projects() {
       },
     },
     {
-      title: "MeetCode (WIP)",
+      title: "MeetCode",
       description:
         "Google Chrome extension that allows users to add friends on LeetCode, code together in real-time, and track each other's progress.",
       technologies: ["JavaScript", "Chrome Extension API", "WebSockets", "React", "Firebase"],
@@ -34,7 +43,7 @@ export function Projects() {
     {
       title: "SebDerm Safe",
       description:
-        "Web application that helps people with seborrheic dermatitis find safe skincare products by analyzing ingredients and flagging potential irritants.",
+        "Web app that helps people with seborrheic dermatitis find safe skincare products by analyzing ingredients and flagging potential irritants.",
       technologies: ["React", "Node.js", "Express", "MongoDB", "AWS"],
       links: {
         github: "https://github.com/troycallen/sebderm-safe",
@@ -42,9 +51,9 @@ export function Projects() {
       },
     },
     {
-      title: "Hitsplat Custom",
+      title: "Hitsplat Customizer",
       description:
-        "Popular Java plugin for Old School RuneScape with 2,000+ active users that dynamically changes hitsplat colors based on attack styles.",
+        "Java plugin for Old School RuneScape with 2,000+ users that dynamically changes hitsplat colors based on incoming and outgoing attack styles.",
       technologies: ["Java", "RuneLite API", "Gradle", "Git"],
       links: {
         github: "#",
