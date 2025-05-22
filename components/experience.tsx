@@ -6,7 +6,7 @@ export function Experience() {
       location: "Atlanta, GA",
       period: "Dec 2024 - Present",
       description:
-        "Developing scalable systems, optimizing backend search performance, and coordinating Docker deployments.",
+        "Optimizing backend search performance, improving embedding models using CUDA, and coordinating Docker deployments.",
     },
     {
       title: "Software Engineer Intern",
@@ -14,7 +14,7 @@ export function Experience() {
       location: "Atlanta, GA",
       period: "May 2024 - Sep 2024",
       description:
-        "Built predictive models for pressure ulcer detection with PyTorch, deployed with Docker and Flask for real-time predictions.",
+        "Building predictive models for pressure ulcer detection, researching causes, and building a dashboard with containerized APIs and caching.",
     },
     {
       title: "Research Assistant",
@@ -22,14 +22,14 @@ export function Experience() {
       location: "Tallahassee, FL",
       period: "Jan 2019 - May 2022",
       description:
-        "Conducting research on Mass Shootings, Natural Language Processing, and graph algorithms like Traveling Salesman Problem.",
+        "Researching mass shootings, NLP techniques, and graph algorithms.",
     },
     {
       title: "Head Teaching Assistant",
       company: "Florida State University",
       location: "Tallahassee, FL",
       period: "Jul 2020 - Dec 2020",
-      description: "Developed and executed curriculum as sole teaching assistant for C++ class during the COVID-19 pandemic.",
+      description: "Sole TA for Dr. George Pesta during the COVID-19 pandemic.",
     },
   ]
 
