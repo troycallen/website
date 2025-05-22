@@ -12,7 +12,7 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   title: "Troy Allen | Software Engineer",
-  description: "Portfolio of Troy Allen, Software Engineer and Computer Science graduate",
+  description: "Portfolio of Troy Allen, Software Engineer and MSCS Student at Georgia Tech",
     generator: 'v0.dev'
 }
 
