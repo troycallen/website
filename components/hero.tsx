@@ -320,16 +320,16 @@ export function Hero() {
           <div className="mb-6 font-mono">
             <p className="text-xl mb-2">Software Engineer</p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">$</span> Graduate student @ GT. Computer programmer and eternal student.
+              <span className="text-secondary">$</span> Graduate CS student @ GT specializing in AI.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">$</span> I love algorithms, machine learning, and programming languages.
+              <span className="text-secondary">$</span> Interested in machine learning, NLP, and programming languages.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">$</span> Spent a lot of time doing research, but now I'm just building things that can help people directly.
+              <span className="text-secondary">$</span> Spent a lot of time doing research in the past, but now I'm just building things that can help people directly.
             </p>
             <p className="text-muted-foreground">
-              <span className="text-secondary">$</span> Feel free to reach out! I'm always looking for new opportunities.
+              <span className="text-secondary">$</span> Feel free to reach out! I'm always looking to meet new people.
             </p>
           </div>
 
