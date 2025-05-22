@@ -2,23 +2,19 @@ export function Skills() {
   const skillCategories = [
     {
       name: "Languages",
-      skills: ["Python", "C++", "Java", "JavaScript", "HTML", "CSS", "SQL"],
+      skills: ["Python", "C++", "Java", "JavaScript", "TypeScript", "SQL"],
     },
     {
       name: "Frameworks",
-      skills: ["React", "FastAPI", "Flask", "Node.js", "Express", "Django", "PyTorch", "gRPC"],
+      skills: ["React", "FastAPI", "Flask", "Node.js", "Express", "Django", "PyTorch", "TensorFlow", "gRPC", "CUDA", "LangChain", "LLMs"],
     },
     {
       name: "Tools",
-      skills: ["Git", "GitLab", "Linux/Unix", "Docker", "Google Cloud", "AWS", "MySQL", "MongoDB", "Redis"],
+      skills: ["Git", "GitLab", "Linux/Unix", "Docker", "Google Cloud", "AWS", "MySQL", "MongoDB", "Redis", "ElasticSearch"],
     },
     {
       name: "Concepts",
-      skills: ["Agile/Scrum", "Distributed Systems", "Data Structures & Algorithms", "OOP", "API Design"],
-    },
-    {
-      name: "Leadership",
-      skills: ["FSU Esports Club Manager (500+ members)", "FSU Overwatch Captain", "GT Esports", "GT Hackathons"],
+      skills: ["RAG", "Backend Development", "NLP", "Agile/Scrum", "Distributed Systems", "Data Structures & Algorithms", "OOP", "API Design"],
     },
   ]
 
