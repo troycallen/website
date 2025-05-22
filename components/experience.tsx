@@ -6,7 +6,7 @@ export function Experience() {
       location: "Atlanta, GA",
       period: "Dec 2024 - Present",
       description:
-        "Optimizing backend search performance, improving embedding models using CUDA, and coordinating Docker deployments.",
+        "Optimizing backend search performance, improving RAG/query performance using CUDA, and coordinating Docker deployments.",
     },
     {
       title: "Software Engineer Intern",
@@ -37,7 +37,7 @@ export function Experience() {
       company: "Florida State University",
       location: "Tallahassee, FL",
       period: "Jul 2020 - Dec 2020",
-      description: "Sole TA for Dr. George Pesta during the COVID-19 pandemic using C++.",
+      description: "Sole TA for Dr. George Pesta during the COVID-19 pandemic using C++ and a lot of Zoom.",
     },
   ]
 
