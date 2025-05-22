@@ -14,22 +14,30 @@ export function Experience() {
       location: "Atlanta, GA",
       period: "May 2024 - Sep 2024",
       description:
-        "Building predictive models for pressure ulcer detection, researching causes, and building a dashboard with containerized APIs and caching.",
+        "Building predictive models for pressure ulcer detection, creating containerized APIs, and publishing a paper.",
     },
     {
       title: "Research Assistant",
       company: "Florida State University",
       location: "Tallahassee, FL",
-      period: "Jan 2019 - May 2022",
+      period: "May 2021 - May 2022",
       description:
-        "Researching mass shootings, NLP techniques, and graph algorithms.",
+        "Optimizing patrol routes using TSP, writing proposals, and building geospatial heatmaps.",
+    },
+    {
+      title: "Undergraduate Researcher",
+      company: "Florida State University",
+      location: "Tallahassee, FL",
+      period: "Jan 2019 - May 2021",
+      description:
+        "Researching mass shootings on a $289k NIJ grant, exploring NLP techniques, and building analytics frameworks.",
     },
     {
       title: "Head Teaching Assistant",
       company: "Florida State University",
       location: "Tallahassee, FL",
       period: "Jul 2020 - Dec 2020",
-      description: "Sole TA for Dr. George Pesta during the COVID-19 pandemic.",
+      description: "Sole TA for Dr. George Pesta during the COVID-19 pandemic using C++.",
     },
   ]
 
