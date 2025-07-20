@@ -14,7 +14,7 @@ export default function Work() {
       role: "Software Engineer Intern",
       company: "Shepherd Center",
       period: "May 2024 - Dec 2024",
-      logo: "sc.webp",
+      logo: "/sc.webp",
       color: "bg-green-600",
     },
     {
@@ -46,7 +46,7 @@ export default function Work() {
         {/* Navigation breadcrumb */}
         <nav className="text-gray-400 mb-16 font-mono text-sm">
           <Link href="/" className="hover:text-white">
-            tr
+            ta
           </Link>
           <span className="mx-2">/</span>
           <span>...</span>
