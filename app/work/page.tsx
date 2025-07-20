@@ -81,71 +81,59 @@ export default function Work() {
         <section className="mb-16">
           <h1 className="text-4xl font-bold mb-12">work</h1>
 
-          <div className="space-y-4">
+          <div className="space-y-8">
             {experiences.map((exp, index) => {
               const isExpanded = expandedIndex === index
               return (
                 <div 
                   key={index} 
-                  className="group relative p-6 bg-gray-900/50 border border-gray-800 rounded-xl hover:border-gray-700 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer"
+                  className="cursor-pointer transition-all duration-200"
                   onClick={() => toggleExpanded(index)}
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-14 h-14 rounded-xl ${exp.color} flex items-center justify-center text-xl overflow-hidden shadow-lg flex-shrink-0`}>
+                  <div className="flex items-start justify-between py-2">
+                    <div className="flex items-start gap-4 flex-1">
+                      <div className={`w-12 h-12 rounded-lg ${exp.color} flex items-center justify-center overflow-hidden flex-shrink-0`}>
                         {exp.logo.startsWith('/') ? (
                           <Image
                             src={exp.logo}
                             alt={`${exp.company} logo`}
-                            width={56}
-                            height={56}
+                            width={48}
+                            height={48}
                             className="w-full h-full object-contain"
                           />
                         ) : (
                           exp.logo
                         )}
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-white mb-1 group-hover:text-blue-300 transition-colors">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl font-medium text-white mb-1">
                           {exp.role}
                         </h3>
-                        <p className="text-gray-300 font-medium mb-2">{exp.company}</p>
+                        <p className="text-gray-400 mb-2">{exp.company}</p>
                         
                         {isExpanded && (
-                          <>
-                            <p className="text-gray-400 text-sm mb-3">{exp.description}</p>
+                          <div className="mt-6 space-y-4">
+                            <p className="text-gray-300 leading-relaxed">
+                              {exp.details}
+                            </p>
                             
                             {/* Skills tags */}
-                            <div className="flex flex-wrap gap-2 mb-3">
+                            <div className="flex flex-wrap gap-2">
                               {exp.skills.map((skill, skillIndex) => (
                                 <span 
                                   key={skillIndex}
-                                  className="px-2 py-1 bg-gray-700 border border-gray-600 rounded-md text-xs text-gray-300"
+                                  className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
                                 >
                                   {skill}
                                 </span>
                               ))}
                             </div>
-                            
-                            {/* Details */}
-                            <div className="mt-4 pt-4 border-t border-gray-700">
-                              <p className="text-gray-300 leading-relaxed">
-                                {exp.details}
-                              </p>
-                            </div>
-                          </>
+                          </div>
                         )}
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-700 text-gray-300 border border-gray-600">
-                        {exp.period}
-                      </span>
-                      <div className={`transform transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}>
-                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
+                    <div className="text-right text-sm text-gray-400 ml-4">
+                      {exp.period}
                     </div>
                   </div>
                 </div>

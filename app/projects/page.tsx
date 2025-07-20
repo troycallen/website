@@ -75,63 +75,54 @@ export default function Projects() {
         <section>
           <h1 className="text-4xl font-bold mb-12">projects</h1>
 
-          <div className="space-y-4">
+          <div className="space-y-8">
             {projects.map((project, index) => {
               const isExpanded = expandedIndex === index
               return (
                 <div 
                   key={index} 
-                  className="group relative p-6 bg-gray-900/50 border border-gray-800 rounded-xl hover:border-gray-700 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer"
+                  className="cursor-pointer transition-all duration-200"
                   onClick={() => toggleExpanded(index)}
                 >
-                  <div className="flex items-start gap-5">
-                    <div
-                      className={`w-16 h-16 rounded-xl ${project.color} flex items-center justify-center text-2xl flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300`}
-                    >
+                  <div className="flex items-start gap-4 py-2">
+                    <div className={`w-12 h-12 rounded-lg ${project.color} flex items-center justify-center text-xl flex-shrink-0`}>
                       {project.logo}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl font-medium text-white mb-1">
                         {project.name}
                       </h3>
-                      <p className="text-gray-300 leading-relaxed text-sm mb-3">
+                      <p className="text-gray-400 leading-relaxed">
                         {project.description}
                       </p>
                       
                       {isExpanded && (
-                        <>
+                        <div className="mt-6 space-y-4">
+                          <p className="text-gray-300 leading-relaxed">
+                            {project.details}
+                          </p>
+                          
                           {/* Skills tags */}
-                          <div className="flex flex-wrap gap-2 mb-3">
+                          <div className="flex flex-wrap gap-2">
                             {project.skills.map((skill, skillIndex) => (
                               <span 
                                 key={skillIndex}
-                                className="px-2 py-1 bg-gray-700 border border-gray-600 rounded-md text-xs text-gray-300"
+                                className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
                               >
                                 {skill}
                               </span>
                             ))}
                           </div>
                           
-                          {/* Details */}
-                          <div className="mt-4 pt-4 border-t border-gray-700">
-                            <p className="text-gray-300 leading-relaxed mb-4">
-                              {project.details}
-                            </p>
-                            <a 
-                              href={project.link}
-                              className="inline-flex items-center px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 hover:text-white hover:border-gray-500 hover:bg-gray-600 transition-all duration-200 text-sm font-medium"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              View Project
-                            </a>
-                          </div>
-                        </>
+                          <a 
+                            href={project.link}
+                            className="inline-block text-gray-400 hover:text-white transition-colors text-sm underline"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            View Project →
+                          </a>
+                        </div>
                       )}
-                    </div>
-                    <div className={`transform transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}>
-                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
                     </div>
                   </div>
                 </div>
