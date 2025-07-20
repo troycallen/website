@@ -13,13 +13,13 @@ export default function Home() {
 
         {/* Main content */}
         <div className="relative p-8 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-gray-700 hover:bg-gray-900/70 transition-all duration-300">
-          <div className="flex items-start gap-8">
+          <div className="flex items-center gap-8">
             <div className="w-56 h-56 rounded-2xl overflow-hidden bg-gray-700 flex-shrink-0 ring-2 ring-gray-800 shadow-2xl">
               <Image
                 src="/surf.png"
                 alt="Troy Allen"
-                width={224}
-                height={224}
+                width={232}
+                height={232}
                 className="w-full h-full object-cover"
               />
             </div>
