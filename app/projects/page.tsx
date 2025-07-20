@@ -58,10 +58,10 @@ export default function Projects() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center">
-      <div className="max-w-4xl mx-auto px-8">
+    <div className="min-h-screen bg-black text-white">
+      <div className="max-w-4xl mx-auto px-8 py-16">
         {/* Navigation breadcrumb */}
-        <nav className="text-gray-400 mb-8 font-mono text-sm">
+        <nav className="text-gray-400 mb-16 font-mono text-sm">
           <Link href="/" className="hover:text-white transition-colors">
             ta
           </Link>
@@ -72,8 +72,8 @@ export default function Projects() {
         </nav>
 
         {/* Projects section */}
-        <div className="relative p-8 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-gray-700 hover:bg-gray-900/70 transition-all duration-300">
-          <h1 className="text-4xl font-bold mb-8 text-white">projects</h1>
+        <section>
+          <h1 className="text-4xl font-bold mb-12">projects</h1>
 
           <div className="space-y-4">
             {projects.map((project, index) => {
@@ -81,7 +81,7 @@ export default function Projects() {
               return (
                 <div 
                   key={index} 
-                  className="group relative p-6 bg-gray-800/50 border border-gray-700 rounded-xl hover:border-gray-600 hover:bg-gray-800/70 transition-all duration-300 cursor-pointer"
+                  className="group relative p-6 bg-gray-900/50 border border-gray-800 rounded-xl hover:border-gray-700 hover:bg-gray-900/70 transition-all duration-300 cursor-pointer"
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-start gap-5">
@@ -138,7 +138,7 @@ export default function Projects() {
               )
             })}
           </div>
-        </div>
+        </section>
       </div>
     </div>
   )
