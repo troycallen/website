@@ -28,7 +28,7 @@ export default function Home() {
               Troy Allen
             </h1>
             <p className="text-2xl text-gray-400 mb-6">CS & ML @ Georgia Tech</p>
-            <p className="text-lg text-gray-400 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-base text-gray-400 mb-8 leading-relaxed max-w-2xl">
               Experienced with and interested in AI, ML, NLP, and scaling systems. Hoping to have an impact on the world using technology.
             </p>
 
