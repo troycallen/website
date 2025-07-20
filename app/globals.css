@@ -6,13 +6,23 @@
   :root {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
+    --primary: 250 95% 65%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 190 90% 50%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 280 75% 60%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --border: 240 5% 25%;
+    --input: 240 5% 25%;
+    --ring: 250 95% 65%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
