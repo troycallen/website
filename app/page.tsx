@@ -19,9 +19,9 @@ export default function Home() {
 
           <div className="flex-1">
             <h1 className="text-5xl font-bold mb-2">Troy Allen</h1>
-            <p className="text-xl text-gray-400 mb-4">MSCS @ Georgia Tech</p>
+            <p className="text-xl text-gray-400 mb-4">MS Computer Science @ Georgia Tech</p>
             <p className="text-gray-300 mb-6">
-              Software Engineer specializing in AI/ML. Building multimodal AI platforms and distributed systems.
+              Engineer interested in AI, NLP, and ML. Avid builder and tinkerer.
             </p>
 
             <div className="flex items-center gap-8">
