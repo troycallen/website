@@ -1,8 +1,14 @@
 "use client"
 
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Projects() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+
+  const toggleExpanded = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index)
+  }
   const projects = [
     {
       name: "Memory Allocator",
@@ -70,53 +76,67 @@ export default function Projects() {
           <h1 className="text-4xl font-bold mb-8 text-white">projects</h1>
 
           <div className="space-y-4">
-            {projects.map((project, index) => (
-              <div 
-                key={index} 
-                className="group relative p-6 bg-gray-800/50 border border-gray-700 rounded-xl hover:border-gray-600 hover:bg-gray-800/70 transition-all duration-300"
-              >
-                <div className="flex items-start gap-5">
-                  <div
-                    className={`w-16 h-16 rounded-xl ${project.color} flex items-center justify-center text-2xl flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300`}
-                  >
-                    {project.logo}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors">
-                      {project.name}
-                    </h3>
-                    <p className="text-gray-300 leading-relaxed text-sm mb-3">
-                      {project.description}
-                    </p>
-                    
-                    {/* Skills tags */}
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {project.skills.map((skill, skillIndex) => (
-                        <span 
-                          key={skillIndex}
-                          className="px-2 py-1 bg-gray-700 border border-gray-600 rounded-md text-xs text-gray-300"
-                        >
-                          {skill}
-                        </span>
-                      ))}
+            {projects.map((project, index) => {
+              const isExpanded = expandedIndex === index
+              return (
+                <div 
+                  key={index} 
+                  className="group relative p-6 bg-gray-800/50 border border-gray-700 rounded-xl hover:border-gray-600 hover:bg-gray-800/70 transition-all duration-300 cursor-pointer"
+                  onClick={() => toggleExpanded(index)}
+                >
+                  <div className="flex items-start gap-5">
+                    <div
+                      className={`w-16 h-16 rounded-xl ${project.color} flex items-center justify-center text-2xl flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300`}
+                    >
+                      {project.logo}
                     </div>
-                    
-                    {/* Details */}
-                    <div className="mt-4 pt-4 border-t border-gray-700">
-                      <p className="text-gray-300 leading-relaxed mb-4">
-                        {project.details}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors">
+                        {project.name}
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed text-sm mb-3">
+                        {project.description}
                       </p>
-                      <a 
-                        href={project.link}
-                        className="inline-flex items-center px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 hover:text-white hover:border-gray-500 hover:bg-gray-600 transition-all duration-200 text-sm font-medium"
-                      >
-                        View Project
-                      </a>
+                      
+                      {isExpanded && (
+                        <>
+                          {/* Skills tags */}
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {project.skills.map((skill, skillIndex) => (
+                              <span 
+                                key={skillIndex}
+                                className="px-2 py-1 bg-gray-700 border border-gray-600 rounded-md text-xs text-gray-300"
+                              >
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                          
+                          {/* Details */}
+                          <div className="mt-4 pt-4 border-t border-gray-700">
+                            <p className="text-gray-300 leading-relaxed mb-4">
+                              {project.details}
+                            </p>
+                            <a 
+                              href={project.link}
+                              className="inline-flex items-center px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 hover:text-white hover:border-gray-500 hover:bg-gray-600 transition-all duration-200 text-sm font-medium"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              View Project
+                            </a>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                    <div className={`transform transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}>
+                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
