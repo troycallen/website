@@ -39,27 +39,6 @@ export default function Work() {
     },
   ]
 
-  const education = [
-    {
-      degree: "MS Computer Science",
-      school: "Georgia Institute of Technology",
-      period: "Aug 2024 - Dec 2025",
-      gpa: "4.00/4.00",
-    },
-    {
-      degree: "MS Analytics",
-      school: "Georgia Institute of Technology",
-      period: "Aug 2022 - Aug 2024",
-      gpa: "3.78/4.00",
-    },
-    {
-      degree: "BS Computer Science",
-      school: "Florida State University",
-      period: "Jun 2017 - Dec 2021",
-      gpa: "3.81/4.00",
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="max-w-4xl mx-auto px-8 py-16">
@@ -96,26 +75,7 @@ export default function Work() {
           </div>
         </section>
 
-        {/* Education section */}
-        <section>
-          <h2 className="text-4xl font-bold mb-12">education</h2>
 
-          <div className="space-y-6">
-            {education.map((edu, index) => (
-              <div key={index} className="flex items-center justify-between py-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gray-700 flex items-center justify-center text-xl">🎓</div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white">{edu.degree}</h3>
-                    <p className="text-gray-400">{edu.school}</p>
-                    <p className="text-gray-500 text-sm">GPA: {edu.gpa}</p>
-                  </div>
-                </div>
-                <span className="text-gray-400 text-sm">{edu.period}</span>
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
     </div>
   )
