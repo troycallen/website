@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Work() {
   const experiences = [
@@ -6,35 +7,35 @@ export default function Work() {
       role: "AI/ML Software Engineer",
       company: "Trideum Corporation",
       period: "Dec 2024 - Present",
-      logo: "🏢",
+      logo: "/trideum.png",
       color: "bg-blue-600",
     },
     {
       role: "Software Engineer Intern",
       company: "Shepherd Center",
       period: "May 2024 - Dec 2024",
-      logo: "🏥",
+      logo: "sc.webp",
       color: "bg-green-600",
     },
     {
       role: "Research Assistant",
       company: "Florida State University",
       period: "May 2021 - May 2022",
-      logo: "🎓",
+      logo: "/fsu.svg",
       color: "bg-red-600",
     },
     {
       role: "Undergraduate Researcher",
       company: "Florida State University",
       period: "Jan 2019 - May 2021",
-      logo: "🎓",
+      logo: "/fsu.svg",
       color: "bg-red-600",
     },
     {
       role: "Lead Teaching Assistant",
       company: "Florida State University",
       period: "Jul 2020 - Dec 2020",
-      logo: "📚",
+      logo: "/fsu.svg",
       color: "bg-yellow-600",
     },
   ]
@@ -61,8 +62,18 @@ export default function Work() {
             {experiences.map((exp, index) => (
               <div key={index} className="flex items-center justify-between py-4">
                 <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-lg ${exp.color} flex items-center justify-center text-xl`}>
-                    {exp.logo}
+                  <div className={`w-12 h-12 rounded-lg ${exp.color} flex items-center justify-center text-xl overflow-hidden`}>
+                    {exp.logo.startsWith('/') ? (
+                      <Image
+                        src={exp.logo}
+                        alt={`${exp.company} logo`}
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-contain"
+                      />
+                    ) : (
+                      exp.logo
+                    )}
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
