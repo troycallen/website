@@ -7,7 +7,7 @@ export default function Resume() {
         {/* Navigation breadcrumb */}
         <nav className="text-gray-400 mb-16 font-mono text-sm">
           <Link href="/" className="hover:text-white">
-            tr
+            ta
           </Link>
           <span className="mx-2">/</span>
           <span>...</span>
