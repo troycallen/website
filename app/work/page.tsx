@@ -19,7 +19,7 @@ export default function Work() {
       color: "bg-blue-600",
       description: "Engineered multimodal AI platform processing 290,000+ files using computer vision, NLP, and CUDA.",
       skills: ["Python", "Docker", "CUDA", "PyTorch", "Computer Vision", "NLP"],
-      details: "Engineered multimodal AI platform processing 290,000+ files using computer vision, NLP, and CUDA with 12+ Docker microservices. Reduced hybrid search latency 80% by optimizing Milvus vector database with dynamic IVF and HNSW indexing. Enhanced BERTopic performance 2x through multi-threaded batch processing and implemented backend LLM streaming reducing query response times 3-4x."
+      details: "Built AI platform processing 290k+ files with computer vision and NLP, optimized search performance by 80%"
     },
     {
       role: "Software Engineer Intern",
@@ -29,7 +29,7 @@ export default function Work() {
       color: "bg-green-600",
       description: "Developed neural network architecture for pressure ulcer prediction achieving 93% accuracy.",
       skills: ["Python", "PyTorch", "Flask", "Redis", "Machine Learning", "scikit-learn"],
-      details: "Developed neural network architecture for pressure ulcer prediction in spinal cord injury patients achieving 93% accuracy using Python/PyTorch. Reduced API response time 60% by implementing containerized Flask endpoints with Redis caching. Built real-time clinical dashboard processing 400+ patient datasets using machine learning pipelines."
+      details: "Created 93% accurate neural network for pressure ulcer prediction and built real-time clinical dashboard"
     },
     {
       role: "Research Assistant",
@@ -39,7 +39,7 @@ export default function Work() {
       color: "bg-red-600",
       description: "Secured $289k NIJ research grant by designing database schema and framework for mass shootings analysis.",
       skills: ["C++", "OpenCV", "Python", "BERT", "NLP", "Database Design"],
-      details: "Secured $289k NIJ research grant by designing database schema and framework for mass shootings analysis. Reduced research time by 20 weeks creating OCR/NLP pipeline in C++ for data extraction with OpenCV. Built automated hate speech detection pipeline for Discord communities using fine-tuned BERT models achieving 89% classification accuracy on 50K+ messages."
+      details: "Secured $289k research grant, built OCR/NLP pipeline in C++, and created hate speech detection system with 89% accuracy"
     },
     {
       role: "Lead Teaching Assistant",
@@ -49,7 +49,7 @@ export default function Work() {
       color: "bg-yellow-600",
       description: "Achieved 100% rating from 75+ students developing C++ curriculum with system-level programming focus.",
       skills: ["C++", "Teaching", "Curriculum Development", "System Programming"],
-      details: "Achieved 100% rating from 75+ students developing C++ curriculum with system-level programming focus. Led programming labs and provided comprehensive academic support for computer science courses with emphasis on low-level programming concepts."
+      details: "Developed C++ curriculum and led programming labs for 75+ students with 100% satisfaction rating"
     },
   ]
 
@@ -103,9 +103,9 @@ export default function Work() {
                         
                         {isExpanded && (
                           <div className="mt-6 space-y-4">
-                            <p className="text-gray-300 leading-relaxed">
-                              {exp.details}
-                            </p>
+                            <div className="text-gray-300 leading-relaxed">
+                              • {exp.details}
+                            </div>
                             
                             {/* Skills tags */}
                             <div className="flex flex-wrap gap-2">
