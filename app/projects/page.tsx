@@ -12,29 +12,29 @@ export default function Projects() {
   const projects = [
     {
       name: "Memory Allocator",
-      description: "Dynamic memory allocator in C++ using bitwise intrinsics and prefetching",
+      description: "Dynamic memory allocator in C++ that runs 2x faster than glibc on specific tasks",
       logo: "⚡",
       color: "bg-yellow-600",
-      details: "Implemented a high-performance dynamic memory allocator in C++ with advanced optimizations including bitwise intrinsics for faster bit manipulation and prefetching techniques to improve cache performance. The allocator supports multiple allocation strategies and provides detailed memory usage analytics.",
-      skills: ["C++", "Memory Management", "Bitwise Operations", "Performance Optimization", "Cache Optimization"],
+      details: "Developed a dynamic memory allocator in C++ that runs 2x faster than glibc on specific tasks. Optimized for cache efficiency using bitwise intrinsics, minimal metadata (< 4%), and prefetching techniques.",
+      skills: ["C++", "Assembly", "Cache Optimization", "Memory Management", "Performance Optimization"],
       link: "#"
     },
     {
       name: "AI Basketball Coach",
-      description: "Real-time basketball shot analysis using pose estimation and computer vision",
+      description: "Real-time basketball shot analysis using MediaPipe pose estimation and computer vision",
       logo: "🏀",
       color: "bg-orange-600",
-      details: "Developed an AI-powered basketball coaching system that uses real-time pose estimation and computer vision to analyze shooting form, provide feedback, and track performance metrics. The system processes video streams to detect key body positions and provides personalized coaching recommendations.",
-      skills: ["Python", "OpenCV", "MediaPipe", "Computer Vision", "Real-time Processing"],
+      details: "Developed real-time basketball shot analysis system using MediaPipe pose estimation and computer vision. Integrated Gemini API for automated shot feedback generation with 4-second overlay display and real-time statistics.",
+      skills: ["Python", "OpenCV", "MediaPipe", "Gemini API", "Computer Vision"],
       link: "#"
     },
     {
-      name: "Raft-Based Database",
-      description: "Fault-tolerant distributed database supporting ACID transactions",
+      name: "Raft-Based Distributed Database",
+      description: "Fault-tolerant distributed database supporting ACID transactions across 5+ nodes",
       logo: "🗄️",
       color: "bg-blue-600",
-      details: "Built a distributed database system implementing the Raft consensus algorithm for fault tolerance and high availability. The system supports ACID transactions, automatic leader election, and seamless failover capabilities. Includes comprehensive testing and monitoring tools.",
-      skills: ["Go", "Distributed Systems", "Raft Algorithm", "ACID Transactions", "Network Programming"],
+      details: "Engineered fault-tolerant distributed database supporting ACID transactions across 5+ nodes. Implemented Raft consensus protocol achieving 99.9% availability with automated leader election and log replication.",
+      skills: ["Rust", "Raft Consensus", "gRPC", "Docker", "Distributed Systems"],
       link: "#"
     },
     {
@@ -85,9 +85,13 @@ export default function Projects() {
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-start gap-4 py-2">
-                    <div className={`w-12 h-12 rounded-lg ${project.color} flex items-center justify-center text-xl flex-shrink-0`}>
+                    <a 
+                      href={project.link}
+                      className={`w-12 h-12 rounded-lg ${project.color} flex items-center justify-center text-xl flex-shrink-0 hover:scale-105 transition-transform duration-200`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       {project.logo}
-                    </div>
+                    </a>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-xl font-medium text-white mb-1">
                         {project.name}
@@ -114,13 +118,6 @@ export default function Projects() {
                             ))}
                           </div>
                           
-                          <a 
-                            href={project.link}
-                            className="inline-block text-gray-400 hover:text-white transition-colors text-sm underline"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            View Project →
-                          </a>
                         </div>
                       )}
                     </div>

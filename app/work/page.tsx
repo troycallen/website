@@ -12,14 +12,14 @@ export default function Work() {
   }
   const experiences = [
     {
-      role: "AI/ML Software Engineer",
+      role: "Software Engineer Intern",
       company: "Trideum Corporation",
       period: "Dec 2024 - Present",
       logo: "/trideum.png",
       color: "bg-blue-600",
-      description: "Developing AI/ML solutions for defense applications, focusing on computer vision and natural language processing.",
-      skills: ["Python", "TensorFlow", "OpenCV", "Docker", "AWS"],
-      details: "Develop machine learning models for defense applications including computer vision systems and NLP pipelines. Deploy scalable ML solutions using cloud infrastructure and containerization technologies."
+      description: "Engineered multimodal AI platform processing 290,000+ files using computer vision, NLP, and CUDA.",
+      skills: ["Python", "Docker", "CUDA", "PyTorch", "Computer Vision", "NLP"],
+      details: "Engineered multimodal AI platform processing 290,000+ files using computer vision, NLP, and CUDA with 12+ Docker microservices. Reduced hybrid search latency 80% by optimizing Milvus vector database with dynamic IVF and HNSW indexing. Enhanced BERTopic performance 2x through multi-threaded batch processing and implemented backend LLM streaming reducing query response times 3-4x."
     },
     {
       role: "Software Engineer Intern",
@@ -27,29 +27,19 @@ export default function Work() {
       period: "May 2024 - Dec 2024",
       logo: "/sc.webp",
       color: "bg-green-600",
-      description: "Developed healthcare software solutions for patient care and rehabilitation.",
-      skills: ["React", "Node.js", "PostgreSQL", "TypeScript", "Docker"],
-      details: "Built full-stack healthcare applications for patient management and rehabilitation tracking. Implemented HIPAA-compliant data handling and secure authentication systems using modern web technologies."
+      description: "Developed neural network architecture for pressure ulcer prediction achieving 93% accuracy.",
+      skills: ["Python", "PyTorch", "Flask", "Redis", "Machine Learning", "scikit-learn"],
+      details: "Developed neural network architecture for pressure ulcer prediction in spinal cord injury patients achieving 93% accuracy using Python/PyTorch. Reduced API response time 60% by implementing containerized Flask endpoints with Redis caching. Built real-time clinical dashboard processing 400+ patient datasets using machine learning pipelines."
     },
     {
       role: "Research Assistant",
       company: "Florida State University",
-      period: "May 2021 - May 2022",
+      period: "Jan 2019 - May 2022",
       logo: "/fsu.svg",
       color: "bg-red-600",
-      description: "Conducted research in machine learning and data analysis for academic projects.",
-      skills: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
-      details: "Researched machine learning algorithms for pattern recognition and predictive modeling. Analyzed large datasets and developed statistical models to support academic research initiatives."
-    },
-    {
-      role: "Undergraduate Researcher",
-      company: "Florida State University",
-      period: "Jan 2019 - May 2021",
-      logo: "/fsu.svg",
-      color: "bg-red-600",
-      description: "Participated in undergraduate research programs focusing on computer science applications.",
-      skills: ["Java", "C++", "Python", "Git", "Linux"],
-      details: "Contributed to computer science research projects involving algorithm optimization and data structure implementation. Collaborated with faculty on software engineering applications and performance analysis."
+      description: "Secured $289k NIJ research grant by designing database schema and framework for mass shootings analysis.",
+      skills: ["C++", "OpenCV", "Python", "BERT", "NLP", "Database Design"],
+      details: "Secured $289k NIJ research grant by designing database schema and framework for mass shootings analysis. Reduced research time by 20 weeks creating OCR/NLP pipeline in C++ for data extraction with OpenCV. Built automated hate speech detection pipeline for Discord communities using fine-tuned BERT models achieving 89% classification accuracy on 50K+ messages."
     },
     {
       role: "Lead Teaching Assistant",
@@ -57,9 +47,9 @@ export default function Work() {
       period: "Jul 2020 - Dec 2020",
       logo: "/fsu.svg",
       color: "bg-yellow-600",
-      description: "Led programming labs and provided academic support for computer science students.",
-      skills: ["Java", "C++", "Teaching", "Mentoring", "Problem Solving"],
-      details: "Led programming labs for 50+ students and conducted office hours for computer science courses. Developed course materials and provided mentorship on programming fundamentals and debugging techniques."
+      description: "Achieved 100% rating from 75+ students developing C++ curriculum with system-level programming focus.",
+      skills: ["C++", "Teaching", "Curriculum Development", "System Programming"],
+      details: "Achieved 100% rating from 75+ students developing C++ curriculum with system-level programming focus. Led programming labs and provided comprehensive academic support for computer science courses with emphasis on low-level programming concepts."
     },
   ]
 

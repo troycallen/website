@@ -13,12 +13,12 @@ export default function Home() {
 
         {/* Main content */}
         <div className="flex items-center gap-12">
-          <div className="w-80 h-80 rounded-xl overflow-hidden bg-gray-700 flex-shrink-0">
+          <div className="w-64 h-64 rounded-xl overflow-hidden bg-gray-700 flex-shrink-0">
             <Image
               src="/surf.png"
               alt="Troy Allen"
-              width={280}
-              height={280}
+              width={256}
+              height={256}
               className="w-full h-full object-cover"
             />
           </div>
