@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Work() {
   const experiences = [
     {
-      role: "Software Engineer Intern",
+      role: "AI/ML Software Engineer",
       company: "Trideum Corporation",
       period: "Dec 2024 - Present",
       logo: "🏢",
@@ -19,7 +19,14 @@ export default function Work() {
     {
       role: "Research Assistant",
       company: "Florida State University",
-      period: "Jan 2019 - May 2022",
+      period: "May 2021 - May 2022",
+      logo: "🎓",
+      color: "bg-red-600",
+    },
+    {
+      role: "Undergraduate Researcher",
+      company: "Florida State University",
+      period: "Jan 2019 - May 2021",
       logo: "🎓",
       color: "bg-red-600",
     },

@@ -8,7 +8,7 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-8 py-16">
         {/* Navigation breadcrumb */}
         <nav className="text-gray-400 mb-16 font-mono text-sm">
-          <span>tr</span>
+          <span>ta</span>
         </nav>
 
         {/* Main content */}
@@ -25,7 +25,7 @@ export default function Home() {
 
           <div className="flex-1">
             <h1 className="text-5xl font-bold mb-2">Troy Allen</h1>
-            <p className="text-xl text-gray-400 mb-4">MS Computer Science @ Georgia Tech</p>
+            <p className="text-xl text-gray-400 mb-4">MSCS @ Georgia Tech</p>
             <p className="text-gray-300 mb-6">
               Software Engineer specializing in AI/ML. Building multimodal AI platforms and distributed systems.
             </p>
