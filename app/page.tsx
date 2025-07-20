@@ -13,8 +13,8 @@ export default function Home() {
 
         {/* Main content */}
         <div className="flex items-center gap-8">
-          <div className="w-40 h-40 rounded-2xl overflow-hidden bg-gray-700 flex-shrink-0 flex items-center justify-center">
-            <span className="text-gray-400 text-3xl font-bold">TA</span>
+          <div className="w-48 h-48 rounded-2xl overflow-hidden bg-gray-700 flex-shrink-0 flex items-center justify-center">
+            <span className="text-gray-400 text-4xl font-bold">TA</span>
           </div>
 
           <div className="flex-1">
@@ -24,34 +24,35 @@ export default function Home() {
               Avid builder and tinkerer. Hoping to have an impact on the world using technology.
             </p>
 
-            <nav className="flex gap-6">
-              <Link href="/work" className="text-gray-300 hover:text-white transition-colors">
-                work
-              </Link>
-              <Link href="/projects" className="text-gray-300 hover:text-white transition-colors">
-                projects
-              </Link>
-              <Link href="/resume" className="text-gray-300 hover:text-white transition-colors">
-                resume
-              </Link>
-            </nav>
-          </div>
-        </div>
+            <div className="flex items-end justify-between">
+              <nav className="flex gap-6">
+                <Link href="/work" className="text-gray-300 hover:text-white transition-colors">
+                  work
+                </Link>
+                <Link href="/projects" className="text-gray-300 hover:text-white transition-colors">
+                  projects
+                </Link>
+                <Link href="/resume" className="text-gray-300 hover:text-white transition-colors">
+                  resume
+                </Link>
+              </nav>
 
-        {/* Social icons in bottom right */}
-        <div className="absolute bottom-8 right-8 flex gap-4">
-          <a href="https://github.com/troycallen" className="text-gray-400 hover:text-white transition-colors">
-            <Github className="w-5 h-5" />
-          </a>
-          <a
-            href="https://linkedin.com/in/troycallen"
-            className="text-gray-400 hover:text-white transition-colors"
-          >
-            <Linkedin className="w-5 h-5" />
-          </a>
-          <a href="mailto:troycallen.dev@gmail.com" className="text-gray-400 hover:text-white transition-colors">
-            <Mail className="w-5 h-5" />
-          </a>
+              <div className="flex gap-4">
+                <a href="https://github.com/troycallen" className="text-gray-400 hover:text-white transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/troycallen"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="mailto:troycallen.dev@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
