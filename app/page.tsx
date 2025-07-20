@@ -1,66 +1,66 @@
-"use client"
-
-import { useState, useEffect } from "react"
-import { Navbar } from "@/components/navbar"
-import { Hero } from "@/components/hero"
-import { Experience } from "@/components/experience"
-import { Projects } from "@/components/projects"
-import { Education } from "@/components/education"
-import { Skills } from "@/components/skills"
-import { Footer } from "@/components/footer"
+import Image from "next/image"
+import { Github, Linkedin, Mail } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("#home")
-
-  // Handle initial hash in URL and hash changes
-  useEffect(() => {
-    const hash = window.location.hash || "#home"
-    setActiveSection(hash)
-
-    const handleHashChange = () => {
-      setActiveSection(window.location.hash || "#home")
-    }
-
-    window.addEventListener("hashchange", handleHashChange)
-    return () => window.removeEventListener("hashchange", handleHashChange)
-  }, [])
-
   return (
-    <main className="min-h-screen flex flex-col">
-      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <div className="container mx-auto px-4 py-8 flex-1">
-        {activeSection === "#home" && (
-          <>
-            <Hero />
-          </>
-        )}
+    <div className="min-h-screen bg-black text-white">
+      <div className="max-w-4xl mx-auto px-8 py-16">
+        {/* Navigation breadcrumb */}
+        <nav className="text-gray-400 mb-16 font-mono text-sm">
+          <span>tr</span>
+        </nav>
 
-        {activeSection === "#experience" && (
-          <div className="mt-12">
-            <Experience />
+        {/* Main content */}
+        <div className="flex items-center gap-8 mb-8">
+          <div className="w-32 h-32 rounded-2xl overflow-hidden bg-gray-800 flex-shrink-0">
+            <Image
+              src="/images/profile.png"
+              alt="Troy Allen"
+              width={128}
+              height={128}
+              className="w-full h-full object-cover"
+            />
           </div>
-        )}
 
-        {activeSection === "#projects" && (
-          <div className="mt-12">
-            <Projects />
-          </div>
-        )}
+          <div className="flex-1">
+            <h1 className="text-5xl font-bold mb-2">Troy Allen</h1>
+            <p className="text-xl text-gray-400 mb-4">MS Computer Science @ Georgia Tech</p>
+            <p className="text-gray-300 mb-6">
+              Software Engineer specializing in AI/ML. Building multimodal AI platforms and distributed systems.
+            </p>
 
-        {activeSection === "#education" && (
-          <div className="mt-12">
-            <Education />
-          </div>
-        )}
+            <div className="flex items-center gap-8">
+              <nav className="flex gap-6">
+                <Link href="/work" className="text-gray-300 hover:text-white transition-colors">
+                  work
+                </Link>
+                <Link href="/projects" className="text-gray-300 hover:text-white transition-colors">
+                  projects
+                </Link>
+                <Link href="/resume" className="text-gray-300 hover:text-white transition-colors">
+                  resume
+                </Link>
+              </nav>
 
-        {activeSection === "#skills" && (
-          <div className="mt-12">
-            <Skills />
+              <div className="flex gap-4">
+                <a href="https://github.com/troycallen" className="text-gray-400 hover:text-white transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/troycallen"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="mailto:troycallen.dev@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
           </div>
-        )}
+        </div>
       </div>
-      <Footer />
-    </main>
+    </div>
   )
 }
-
