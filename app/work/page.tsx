@@ -103,9 +103,9 @@ export default function Work() {
                         
                         {isExpanded && (
                           <div className="mt-6 space-y-4">
-                            <p className="text-gray-300 leading-relaxed">
-                              {exp.details}
-                            </p>
+                            <div className="text-gray-300 leading-relaxed">
+                              • {exp.details}
+                            </div>
                             
                             {/* Skills tags */}
                             <div className="flex flex-wrap gap-2">

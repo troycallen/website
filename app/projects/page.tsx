@@ -102,9 +102,9 @@ export default function Projects() {
                       
                       {isExpanded && (
                         <div className="mt-6 space-y-4">
-                          <p className="text-gray-300 leading-relaxed">
-                            {project.details}
-                          </p>
+                          <div className="text-gray-300 leading-relaxed">
+                            • {project.details}
+                          </div>
                           
                           {/* Skills tags */}
                           <div className="flex flex-wrap gap-2">
