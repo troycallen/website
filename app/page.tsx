@@ -7,7 +7,7 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white flex items-center justify-center">
       <div className="max-w-4xl mx-auto px-8">
         {/* Navigation breadcrumb */}
-        <nav className="text-gray-400 mb-16 font-mono text-sm">
+        <nav className="text-gray-400 mb-8 font-mono text-sm">
           <span>ta</span>
         </nav>
 
