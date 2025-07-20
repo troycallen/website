@@ -13,8 +13,14 @@ export default function Home() {
 
         {/* Main content */}
         <div className="flex items-center gap-8">
-          <div className="w-48 h-48 rounded-2xl overflow-hidden bg-gray-700 flex-shrink-0 flex items-center justify-center">
-            <span className="text-gray-400 text-4xl font-bold">TA</span>
+          <div className="w-48 h-48 rounded-2xl overflow-hidden bg-gray-700 flex-shrink-0">
+            <Image
+              src="/surf.png"
+              alt="Troy Allen"
+              width={192}
+              height={192}
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <div className="flex-1">
