@@ -3,11 +3,10 @@ import type { Metadata } from "next"
 import { Inter, Space_Mono } from "next/font/google"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const spaceMono = Space_Mono({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-space-mono",
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"]
 })
 
 export const metadata: Metadata = {
@@ -23,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans bg-black text-white antialiased`}>{children}</body>
+      <body className={`${inter.variable} font-sans bg-black text-white antialiased leading-relaxed`}>{children}</body>
     </html>
   )
 }
