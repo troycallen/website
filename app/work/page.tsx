@@ -19,7 +19,7 @@ export default function Work() {
       color: "bg-blue-600",
       description: "Engineered multimodal AI platform processing 290,000+ files using computer vision, NLP, and CUDA.",
       skills: ["Python", "Docker", "CUDA", "PyTorch", "Computer Vision", "NLP"],
-      details: "Built AI platform processing 290k+ files with computer vision and NLP, optimized search performance by 80%"
+      details: "Built multimodal AI platform with computer vision and NLP, achieving significant performance optimizations"
     },
     {
       role: "Software Engineer Intern",
@@ -29,7 +29,7 @@ export default function Work() {
       color: "bg-green-600",
       description: "Developed neural network architecture for pressure ulcer prediction achieving 93% accuracy.",
       skills: ["Python", "PyTorch", "Flask", "Redis", "Machine Learning", "scikit-learn"],
-      details: "Created 93% accurate neural network for pressure ulcer prediction and built real-time clinical dashboard"
+      details: "Developed neural networks for healthcare prediction and built real-time clinical dashboard"
     },
     {
       role: "Research Assistant",
@@ -39,7 +39,7 @@ export default function Work() {
       color: "bg-red-600",
       description: "Secured $289k NIJ research grant by designing database schema and framework for mass shootings analysis.",
       skills: ["C++", "OpenCV", "Python", "BERT", "NLP", "Database Design"],
-      details: "Secured $289k research grant, built OCR/NLP pipeline in C++, and created hate speech detection system with 89% accuracy"
+      details: "Led research initiatives including grant projects and hate speech detection systems"
     },
     {
       role: "Lead Teaching Assistant",
@@ -49,7 +49,7 @@ export default function Work() {
       color: "bg-yellow-600",
       description: "Achieved 100% rating from 75+ students developing C++ curriculum with system-level programming focus.",
       skills: ["C++", "Teaching", "Curriculum Development", "System Programming"],
-      details: "Developed C++ curriculum and led programming labs for 75+ students with 100% satisfaction rating"
+      details: "Taught system-level programming and led labs with excellent student feedback"
     },
   ]
 
@@ -103,9 +103,9 @@ export default function Work() {
                         
                         {isExpanded && (
                           <div className="mt-6 space-y-4">
-                            <div className="text-gray-300 leading-relaxed">
-                              • {exp.details}
-                            </div>
+                            <p className="text-gray-300 leading-relaxed">
+                              {exp.details}
+                            </p>
                             
                             {/* Skills tags */}
                             <div className="flex flex-wrap gap-2">

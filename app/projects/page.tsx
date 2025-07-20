@@ -15,7 +15,7 @@ export default function Projects() {
       description: "Dynamic memory allocator in C++ that runs 2x faster than glibc on specific tasks",
       logo: "⚡",
       color: "bg-yellow-600",
-      details: "Custom memory allocator that outperforms glibc by 2x using cache optimization and bitwise intrinsics",
+      details: "High-performance memory allocator with advanced cache optimization techniques",
       skills: ["C++", "Assembly", "Cache Optimization", "Memory Management", "Performance Optimization"],
       link: "#"
     },
@@ -24,7 +24,7 @@ export default function Projects() {
       description: "Real-time basketball shot analysis using MediaPipe pose estimation and computer vision",
       logo: "🏀",
       color: "bg-orange-600",
-      details: "Real-time shot analysis using pose estimation with AI-generated feedback and performance tracking",
+      details: "Computer vision system for basketball analysis with AI-powered feedback",
       skills: ["Python", "OpenCV", "MediaPipe", "Gemini API", "Computer Vision"],
       link: "#"
     },
@@ -33,7 +33,7 @@ export default function Projects() {
       description: "Fault-tolerant distributed database supporting ACID transactions across 5+ nodes",
       logo: "🗄️",
       color: "bg-blue-600",
-      details: "Distributed database with Raft consensus achieving 99.9% availability across 5+ nodes",
+      details: "Fault-tolerant distributed database with high availability architecture",
       skills: ["Rust", "Raft Consensus", "gRPC", "Docker", "Distributed Systems"],
       link: "#"
     },
@@ -102,9 +102,9 @@ export default function Projects() {
                       
                       {isExpanded && (
                         <div className="mt-6 space-y-4">
-                          <div className="text-gray-300 leading-relaxed">
-                            • {project.details}
-                          </div>
+                          <p className="text-gray-300 leading-relaxed">
+                            {project.details}
+                          </p>
                           
                           {/* Skills tags */}
                           <div className="flex flex-wrap gap-2">
