@@ -12,7 +12,7 @@ export default function Projects() {
   const projects = [
     {
       name: "Memory Allocator",
-      description: "Dynamic memory allocator in C++ that runs 2x faster than glibc on specific tasks",
+      description: "Dynamic memory allocator in C++",
       logo: "⚡",
       color: "bg-yellow-600",
       details: "High-performance memory allocator with advanced cache optimization techniques",
@@ -21,7 +21,7 @@ export default function Projects() {
     },
     {
       name: "AI Basketball Coach",
-      description: "Real-time basketball shot analysis using MediaPipe pose estimation and computer vision",
+      description: "Real-time basketball shot analysis and coaching",
       logo: "🏀",
       color: "bg-orange-600",
       details: "Computer vision system for basketball analysis with AI-powered feedback",
@@ -29,8 +29,8 @@ export default function Projects() {
       link: "#"
     },
     {
-      name: "Raft-Based Distributed Database",
-      description: "Fault-tolerant distributed database supporting ACID transactions across 5+ nodes",
+      name: "Rafty",
+      description: "Fault-tolerant distributed database",
       logo: "🗄️",
       color: "bg-blue-600",
       details: "Fault-tolerant distributed database with high availability architecture",
@@ -38,8 +38,8 @@ export default function Projects() {
       link: "#"
     },
     {
-      name: "Hate Speech Detection",
-      description: "Automated pipeline for Discord communities using fine-tuned BERT models",
+      name: "Speecher",
+      description: "Automated pipeline for hate speech on Discord",
       logo: "🛡️",
       color: "bg-red-600",
       details: "Created an automated hate speech detection system for Discord communities using fine-tuned BERT models. The pipeline processes messages in real-time, classifies content, and provides moderation tools. Includes a web dashboard for community managers to monitor and configure detection parameters.",
@@ -47,7 +47,7 @@ export default function Projects() {
       link: "#"
     },
     {
-      name: "OCR/NLP Pipeline",
+      name: "MSExtractor",
       description: "Data extraction pipeline in C++ for mass shootings analysis research",
       logo: "📄",
       color: "bg-indigo-600",
