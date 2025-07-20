@@ -19,7 +19,7 @@ export default function Work() {
       color: "bg-blue-600",
       description: "Developing AI/ML solutions for defense applications, focusing on computer vision and natural language processing.",
       skills: ["Python", "TensorFlow", "OpenCV", "Docker", "AWS"],
-      details: "Working on cutting-edge AI/ML projects for defense applications. Specializing in computer vision algorithms, natural language processing, and machine learning model deployment. Collaborating with cross-functional teams to deliver robust, scalable solutions."
+      details: "Develop machine learning models for defense applications including computer vision systems and NLP pipelines. Deploy scalable ML solutions using cloud infrastructure and containerization technologies."
     },
     {
       role: "Software Engineer Intern",
@@ -29,7 +29,7 @@ export default function Work() {
       color: "bg-green-600",
       description: "Developed healthcare software solutions for patient care and rehabilitation.",
       skills: ["React", "Node.js", "PostgreSQL", "TypeScript", "Docker"],
-      details: "Built and maintained healthcare software systems for patient care and rehabilitation. Developed full-stack applications using React, Node.js, and PostgreSQL. Implemented secure data handling and HIPAA compliance features."
+      details: "Built full-stack healthcare applications for patient management and rehabilitation tracking. Implemented HIPAA-compliant data handling and secure authentication systems using modern web technologies."
     },
     {
       role: "Research Assistant",
@@ -39,7 +39,7 @@ export default function Work() {
       color: "bg-red-600",
       description: "Conducted research in machine learning and data analysis for academic projects.",
       skills: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
-      details: "Conducted research in machine learning and data analysis. Developed algorithms for pattern recognition and predictive modeling. Published findings in academic journals and presented at conferences."
+      details: "Researched machine learning algorithms for pattern recognition and predictive modeling. Analyzed large datasets and developed statistical models to support academic research initiatives."
     },
     {
       role: "Undergraduate Researcher",
@@ -49,7 +49,7 @@ export default function Work() {
       color: "bg-red-600",
       description: "Participated in undergraduate research programs focusing on computer science applications.",
       skills: ["Java", "C++", "Python", "Git", "Linux"],
-      details: "Participated in undergraduate research programs focusing on computer science applications. Worked on various projects including algorithm optimization, data structures, and software engineering principles."
+      details: "Contributed to computer science research projects involving algorithm optimization and data structure implementation. Collaborated with faculty on software engineering applications and performance analysis."
     },
     {
       role: "Lead Teaching Assistant",
@@ -59,7 +59,7 @@ export default function Work() {
       color: "bg-yellow-600",
       description: "Led programming labs and provided academic support for computer science students.",
       skills: ["Java", "C++", "Teaching", "Mentoring", "Problem Solving"],
-      details: "Led programming labs and provided academic support for computer science students. Developed course materials, graded assignments, and conducted office hours. Mentored students in programming fundamentals and problem-solving techniques."
+      details: "Led programming labs for 50+ students and conducted office hours for computer science courses. Developed course materials and provided mentorship on programming fundamentals and debugging techniques."
     },
   ]
 

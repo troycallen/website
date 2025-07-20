@@ -17,8 +17,8 @@ export default function Home() {
             <Image
               src="/surf.png"
               alt="Troy Allen"
-              width={320}
-              height={320}
+              width={280}
+              height={280}
               className="w-full h-full object-cover"
             />
           </div>
