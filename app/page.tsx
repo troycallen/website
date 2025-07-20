@@ -13,7 +13,7 @@ export default function Home() {
 
         {/* Main content */}
         <div className="relative p-8 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-gray-700 hover:bg-gray-900/70 transition-all duration-300">
-          <div className="flex items-center gap-8">
+          <div className="flex items-start gap-8">
             <div className="w-56 h-56 rounded-2xl overflow-hidden bg-gray-700 flex-shrink-0 ring-2 ring-gray-800 shadow-2xl">
               <Image
                 src="/surf.png"
@@ -25,7 +25,7 @@ export default function Home() {
             </div>
 
             <div className="flex-1">
-              <h1 className="text-6xl font-bold mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <h1 className="text-6xl font-bold mb-2 text-white">
                 Troy Allen
               </h1>
               <p className="text-2xl text-blue-400 mb-4 font-medium">CS & ML @ Georgia Tech</p>
