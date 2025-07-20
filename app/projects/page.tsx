@@ -33,7 +33,7 @@ export default function Projects() {
       description: "Fault-tolerant distributed database supporting ACID transactions across 5+ nodes",
       logo: "🗄️",
       color: "bg-blue-600",
-      details: "Distributed database with Raft consensus achieving 99.9% availability across 5+ nodes"
+      details: "Distributed database with Raft consensus achieving 99.9% availability across 5+ nodes",
       skills: ["Rust", "Raft Consensus", "gRPC", "Docker", "Distributed Systems"],
       link: "#"
     },
