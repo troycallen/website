@@ -11,6 +11,15 @@ export default function Projects() {
   }
   const projects = [
     {
+      name: "Goaldle",
+      description: "A Wordle-inspired game for soccer using computer vision",
+      logo: "⚽",
+      color: "bg-green-700",
+      details: "Goaldle challenges users to guess soccer events or players by analyzing video clips. Utilizes TensorFlow for computer vision and TypeScript for the game logic and frontend, tracking player movements and actions in real time.",
+      skills: ["TypeScript", "TensorFlow", "Computer Vision"],
+      link: "#"
+    },
+    {
       name: "Memory Allocator",
       description: "Dynamic memory allocator in C++",
       logo: "⚡",
