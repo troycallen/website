@@ -14,7 +14,7 @@ export default function Projects() {
     {
       name: "Goaldle",
       description: "A Wordle-inspired game for soccer using computer vision",
-      logo: "/goaldle.jpg",
+      logo: "/goaldle.png",
       size: "w-16 h-16",
       details: "Wordle-inspired game for guessing soccer players by analyzing CV-blurred videos",
       skills: ["Python", "TypeScript", "TensorFlow", "Computer Vision"],

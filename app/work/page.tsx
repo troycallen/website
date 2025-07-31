@@ -17,8 +17,17 @@ export default function Work() {
       period: "Aug 2025 - Present",
       logo: "/conduent.jpg",
       size: "w-16 h-16",
-      skills: ["Python","PyTorch", "NLP"],
-      details: "Working with the cybersecurity team to build defensive AI/ML models",
+      skills: ["Python", "PyTorch", "TensorFlow", "Docker", "Machine Learning"],
+      details: "Working with the cybersecurity team to build defensive AI/ML models for threat detection and vulnerability management",
+    },
+    {
+      role: "AI Research Assistant",
+      company: "Georgia Tech CROCS",
+      period: "Aug 2025 - Present",
+      logo: "/gt.jpg",
+      size: "w-16 h-16",
+      skills: ["Python", "NLP", "LLMs", "AI Agents"],
+      details: "Researching AI safety and sustainability in relation to LLMs and AI agents",
     },
     {
       role: "Software Engineer Intern",
@@ -27,7 +36,7 @@ export default function Work() {
       logo: "/trideum.jpg",
       size: "w-16 h-16",
       skills: ["Python", "Docker", "CUDA", "PyTorch", "NLP"],
-      details: "Built multimodal AI labeling platform using NLP, computer vision, and CUDA",
+      details: "Built multimodal AI labeling platform using NLP, computer vision, and CUDA and optimized backend search",
     },
     {
       role: "Machine Learning Engineer Intern",
@@ -36,7 +45,7 @@ export default function Work() {
       logo: "/shepherd_center.jpg",
       size: "w-16 h-16",
       skills: ["Python", "PyTorch", "Flask", "Redis", "Machine Learning"],
-      details: "Built neural networks and APIs for pressure ulcer prediction in spinal cord injury patients"
+      details: "Built neural networks and APIs to aid clinicians in pressure ulcer prediction in spinal cord injury patients"
     },
     {
       role: "Graduate Research Assistant",
@@ -54,7 +63,7 @@ export default function Work() {
       logo: "/fsu.jpg",
       size: "w-16 h-16",
       skills: ["C++", "OpenCV", "Python", "NLP", "Database Design"],
-      details: "Conducted research on mass shootings and developed novel NLP pipeline"
+      details: "Conducted research on mass shootings, developed OCR and NLP pipeline, and built novel database of public mass shootings under Dr. Jillian Turanovic"
     },
     {
       role: "Lead Teaching Assistant",
@@ -63,7 +72,7 @@ export default function Work() {
       logo: "/fsu_logo.png",
       size: "w-16 h-16",
       skills: ["C++", "Teaching", "Systems Programming"],
-      details: "Systems programming and C++ teaching assistant"
+      details: "Systems programming and C++ teaching assistant during COVID-19"
     },
   ]
 
