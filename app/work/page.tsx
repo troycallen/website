@@ -73,7 +73,7 @@ export default function Work() {
         {/* Navigation breadcrumb */}
         <nav className="text-gray-400 mb-16 font-mono text-sm">
           <Link href="/" className="hover:text-white transition-colors">
-            ta
+            troy
           </Link>
           <span className="mx-2">/</span>
           <span>...</span>

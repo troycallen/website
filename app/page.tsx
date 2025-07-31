@@ -6,11 +6,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center">
       <div className="max-w-4xl mx-auto px-8">
-        {/* Navigation breadcrumb */}
-        <nav className="text-gray-400 mb-8 font-mono text-sm">
-          <span>ta</span>
-        </nav>
-
         {/* Main content */}
         <div className="flex items-center gap-12">
           <div className="w-64 h-64 rounded-xl overflow-hidden bg-gray-700 flex-shrink-0">
