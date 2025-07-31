@@ -16,8 +16,8 @@ export default function Projects() {
       description: "A Wordle-inspired game for soccer using computer vision",
       logo: "/goaldle.jpg",
       size: "w-16 h-16",
-      details: "Goaldle challenges users to guess soccer events or players by analyzing video clips. Utilizes TensorFlow for computer vision and TypeScript for the game logic and frontend, tracking player movements and actions in real time.",
-      skills: ["TypeScript", "TensorFlow", "Computer Vision"],
+      details: "Wordle-inspired game for guessing soccer players by analyzing CV-blurred videos",
+      skills: ["Python", "TypeScript", "TensorFlow", "Computer Vision"],
       link: "#"
     },
     {
@@ -25,7 +25,7 @@ export default function Projects() {
       description: "Dynamic memory allocator in C++",
       logo: "/mem_alloc.jpg",
       size: "w-16 h-16",
-      details: "High-performance memory allocator with advanced cache optimization techniques",
+      details: "High-performance memory allocator with cache optimization techniques and bitwise operations",
       skills: ["C++", "Assembly", "Cache Optimization", "Memory Management", "Performance Optimization"],
       link: "#"
     },
@@ -34,7 +34,7 @@ export default function Projects() {
       description: "Real-time basketball shot analysis and coaching",
       logo: "/basketball.png",
       size: "w-16 h-16",
-      details: "Computer vision system for basketball analysis with AI-powered feedback",
+      details: "Computer vision system for basketball analysis with AI-powered feedback and MediaPipe",
       skills: ["Python", "OpenCV", "MediaPipe", "Gemini API", "Computer Vision"],
       link: "#"
     },
@@ -43,7 +43,7 @@ export default function Projects() {
       description: "Fault-tolerant distributed database",
       logo: "/rafty.png",
       size: "w-16 h-16",
-      details: "Fault-tolerant distributed database with high availability architecture",
+      details: "Fault-tolerant distributed database with automated leader election and Raft consensus",
       skills: ["Rust", "Raft Consensus", "gRPC", "Docker", "Distributed Systems"],
       link: "#"
     },
@@ -52,7 +52,7 @@ export default function Projects() {
       description: "Automated pipeline for hate speech on Discord",
       logo: "/speecher.png",
       size: "w-16 h-16",  
-      details: "Created an automated hate speech detection system for Discord communities using fine-tuned BERT models. The pipeline processes messages in real-time, classifies content, and provides moderation tools. Includes a web dashboard for community managers to monitor and configure detection parameters.",
+      details: "Automated hate speech detection for Discord fine-tuned BERT models and Discord API",
       skills: ["Python", "BERT", "NLP", "Discord API", "Machine Learning"],
       link: "#"
     },
@@ -61,7 +61,7 @@ export default function Projects() {
       description: "Data extraction pipeline in C++ for mass shootings analysis research",
       logo: "/msextractor.png",
       size: "w-16 h-16",
-      details: "Developed a comprehensive OCR and NLP pipeline in C++ for academic research on mass shootings analysis. The system extracts and processes text from various document formats, applies natural language processing techniques, and generates structured data for research analysis.",
+      details: "OCR and NLP pipeline for mass shootings analysis research using Tesseract and OpenCV",
       skills: ["C++", "OCR", "NLP", "Data Processing", "Research Tools"],
       link: "#"
     },
