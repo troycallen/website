@@ -27,4 +27,18 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+/* SVG fixes for better rendering */
+svg {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+svg path {
+  fill: inherit;
+}
+
+svg g {
+  fill: inherit;
 } 
