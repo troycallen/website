@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 
 export default function Projects() {
@@ -13,8 +14,8 @@ export default function Projects() {
     {
       name: "Goaldle",
       description: "A Wordle-inspired game for soccer using computer vision",
-      logo: "⚽",
-      color: "bg-green-700",
+      logo: "/goaldle.jpg",
+      size: "w-16 h-16",
       details: "Goaldle challenges users to guess soccer events or players by analyzing video clips. Utilizes TensorFlow for computer vision and TypeScript for the game logic and frontend, tracking player movements and actions in real time.",
       skills: ["TypeScript", "TensorFlow", "Computer Vision"],
       link: "#"
@@ -22,8 +23,8 @@ export default function Projects() {
     {
       name: "Memory Allocator",
       description: "Dynamic memory allocator in C++",
-      logo: "⚡",
-      color: "bg-yellow-600",
+      logo: "/mem_alloc.jpg",
+      size: "w-16 h-16",
       details: "High-performance memory allocator with advanced cache optimization techniques",
       skills: ["C++", "Assembly", "Cache Optimization", "Memory Management", "Performance Optimization"],
       link: "#"
@@ -31,8 +32,8 @@ export default function Projects() {
     {
       name: "AI Basketball Coach",
       description: "Real-time basketball shot analysis and coaching",
-      logo: "🏀",
-      color: "bg-orange-600",
+      logo: "/basketball.png",
+      size: "w-16 h-16",
       details: "Computer vision system for basketball analysis with AI-powered feedback",
       skills: ["Python", "OpenCV", "MediaPipe", "Gemini API", "Computer Vision"],
       link: "#"
@@ -40,8 +41,8 @@ export default function Projects() {
     {
       name: "Rafty",
       description: "Fault-tolerant distributed database",
-      logo: "🗄️",
-      color: "bg-blue-600",
+      logo: "/rafty.png",
+      size: "w-16 h-16",
       details: "Fault-tolerant distributed database with high availability architecture",
       skills: ["Rust", "Raft Consensus", "gRPC", "Docker", "Distributed Systems"],
       link: "#"
@@ -49,8 +50,8 @@ export default function Projects() {
     {
       name: "Speecher",
       description: "Automated pipeline for hate speech on Discord",
-      logo: "🛡️",
-      color: "bg-red-600",
+      logo: "/speecher.png",
+      size: "w-16 h-16",  
       details: "Created an automated hate speech detection system for Discord communities using fine-tuned BERT models. The pipeline processes messages in real-time, classifies content, and provides moderation tools. Includes a web dashboard for community managers to monitor and configure detection parameters.",
       skills: ["Python", "BERT", "NLP", "Discord API", "Machine Learning"],
       link: "#"
@@ -58,8 +59,8 @@ export default function Projects() {
     {
       name: "MSExtractor",
       description: "Data extraction pipeline in C++ for mass shootings analysis research",
-      logo: "📄",
-      color: "bg-indigo-600",
+      logo: "/msextractor.png",
+      size: "w-16 h-16",
       details: "Developed a comprehensive OCR and NLP pipeline in C++ for academic research on mass shootings analysis. The system extracts and processes text from various document formats, applies natural language processing techniques, and generates structured data for research analysis.",
       skills: ["C++", "OCR", "NLP", "Data Processing", "Research Tools"],
       link: "#"
@@ -84,7 +85,7 @@ export default function Projects() {
         <section>
           <h1 className="text-4xl font-bold mb-12">projects</h1>
 
-          <div className="space-y-8">
+          <div className="space-y-5">
             {projects.map((project, index) => {
               const isExpanded = expandedIndex === index
               return (
@@ -94,13 +95,20 @@ export default function Projects() {
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-start gap-4 py-2">
-                    <a 
-                      href={project.link}
-                      className={`w-12 h-12 rounded-lg ${project.color} flex items-center justify-center text-xl flex-shrink-0 hover:scale-105 transition-transform duration-200`}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {project.logo}
-                    </a>
+                    <div className={`${project.size} rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0 relative`}>
+                      {project.logo.startsWith('/') ? (
+                        <Image
+                          src={project.logo}
+                          alt={`${project.name} logo`}
+                          fill
+                          className="object-contain p-1"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-xl">
+                          {project.logo}
+                        </div>
+                      )}
+                    </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-xl font-medium text-white mb-1">
                         {project.name}

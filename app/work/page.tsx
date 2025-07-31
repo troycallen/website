@@ -85,7 +85,7 @@ export default function Work() {
         <section className="mb-16">
           <h1 className="text-4xl font-bold mb-12">work</h1>
 
-          <div className="space-y-8">
+          <div className="space-y-5">
             {experiences.map((exp, index) => {
               const isExpanded = expandedIndex === index
               return (
