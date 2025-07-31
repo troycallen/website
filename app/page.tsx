@@ -1,60 +1,144 @@
+"use client"
+
 import Image from "next/image"
 import { Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Home() {
+  const [imageEffect, setImageEffect] = useState<boolean>(false)
+
+  const links = [
+    { text: "work", link: "/work" },
+    { text: "projects", link: "/projects" },
+    { text: "resume", link: "/resume" },
+  ]
+
+  const socials = [
+    {
+      icon: <Github className="w-6 h-6" />,
+      link: "https://github.com/troycallen",
+      platform: "github",
+    },
+    {
+      icon: <Linkedin className="w-6 h-6" />,
+      link: "https://linkedin.com/in/troycallen",
+      platform: "linkedin",
+    },
+    {
+      icon: <Mail className="w-6 h-6" />,
+      link: "mailto:troycallen.dev@gmail.com",
+      platform: "email",
+    },
+  ]
+
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center">
-      <div className="max-w-4xl mx-auto px-8">
-        {/* Main content */}
-        <div className="flex items-center gap-12">
-          <div className="w-64 h-64 rounded-xl overflow-hidden bg-gray-700 flex-shrink-0">
+    <main className="flex min-h-screen flex-col justify-center items-center p-4 sm:p-24 bg-black text-white">
+      {/* Mobile */}
+      <div className="md:hidden flex flex-col rounded-3xl shadow-2xl shadow-gray-400 dark:shadow-black overflow-clip w-full max-w-[24em]">
+        {/* Image container */}
+        <div className="relative w-full aspect-4/5">
+          {/* Profile pic */}
+          <div className="h-full w-full z-0">
             <Image
               src="/surf.png"
               alt="Troy Allen"
-              width={256}
-              height={256}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              onClick={() => setImageEffect(true)}
             />
           </div>
+          {/* Bottom banner */}
+          <div className="z-10 p-6 pt-12 absolute left-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent w-full">
+            <div className="flex flex-col">
+              <div className="font-semibold text-3xl text-white tracking-tight">
+                Troy Allen
+              </div>
+              <div className="font-medium text-lg text-gray-300 tracking-tight">
+                CS & ML @ Georgia Tech
+              </div>
+            </div>
+          </div>
 
-          <div className="flex-1">
-            <h1 className="text-6xl font-bold mb-4 text-white">
-              Troy Allen
-            </h1>
-            <p className="text-2xl text-gray-400 mb-6">CS & ML @ Georgia Tech</p>
-            <p className="text-base text-gray-400 mb-8 leading-relaxed max-w-2xl">
-              Experienced with and interested in AI, ML, NLP, and scaling systems. Hoping to have an impact on the world using technology.
-            </p>
-
-            <div className="flex items-center justify-between">
-              <nav className="flex gap-8">
-                <Link href="/work" className="text-gray-300 hover:text-white transition-colors">
-                  work
-                </Link>
-                <Link href="/projects" className="text-gray-300 hover:text-white transition-colors">
-                  projects
-                </Link>
-                <Link href="/resume" className="text-gray-300 hover:text-white transition-colors">
-                  resume
-                </Link>
-              </nav>
-
-              <div className="flex gap-4">
-                <a href="https://github.com/troycallen" className="text-gray-400 hover:text-white transition-colors">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com/in/troycallen" className="text-gray-400 hover:text-white transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="mailto:troycallen.dev@gmail.com" className="text-gray-400 hover:text-white transition-colors">
-                  <Mail className="w-5 h-5" />
-                </a>
+          {/* Top bar */}
+          <div className="z-10 p-6 absolute left-0 top-0 right-0">
+            <div className="flex flex-row gap-4 justify-between items-start">
+              <div className="flex flex-col gap-3 items-center">
+                {socials.map((social, idx) => (
+                  <a
+                    key={idx}
+                    href={social.link}
+                    className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition ease-in-out hover:scale-110 hover:-rotate-12"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Web */}
+      <div className="hidden md:flex flex-col md:flex-row gap-8 lg:gap-12 max-w-6xl items-center">
+        {/* Profile pic */}
+        <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 flex-shrink-0">
+          <Image
+            src="/surf.png"
+            alt="Troy Allen"
+            fill
+            className={`h-full w-full rounded-xl shadow-xl transition ease-in-out hover:scale-110 duration-500 hover:cursor-pointer object-cover ${
+              imageEffect ? "animate-pulse" : ""
+            }`}
+            onClick={() => setImageEffect(true)}
+            onAnimationEnd={() => setImageEffect(false)}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="flex flex-col justify-between flex-1 max-w-2xl">
+          <div className="flex flex-col gap-4 lg:gap-6">
+            <div className="flex flex-col gap-3">
+              <div className="font-bold text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight -ml-2">
+                Troy Allen
+              </div>
+              <div className="font-semibold text-xl lg:text-2xl xl:text-3xl text-gray-400 tracking-tight">
+                CS & ML @ Georgia Tech
+              </div>
+            </div>
+            <div className="text-gray-400 text-lg leading-relaxed">
+              Experienced with and interested in AI, ML, NLP, and scaling systems. Hoping to have an impact on the world using technology.
+            </div>
+          </div>
+          
+          <div className="flex flex-row justify-between items-center gap-4 mt-6">
+            <div className="flex flex-row gap-1 items-center -ml-4">
+              {links.map((link, idx) => (
+                <Link
+                  key={idx}
+                  href={link.link}
+                  className="text-gray-300 hover:text-white hover:bg-gray-800 px-4 py-2 rounded-lg transition font-medium hover:scale-105"
+                >
+                  {link.text}
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-row gap-3 items-center">
+              {socials.map((social, idx) => (
+                <a
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  key={idx}
+                  href={social.link}
+                  className="text-gray-400 hover:text-white hover:bg-gray-800 p-3 rounded-lg transition hover:scale-105"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   )
 }
