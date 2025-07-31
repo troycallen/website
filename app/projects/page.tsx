@@ -59,7 +59,7 @@ export default function Projects() {
     {
       name: "MSExtractor",
       description: "Data extraction pipeline in C++ for mass shootings analysis research",
-      logo: "/MSextractor.png",
+      logo: "/MSExtractor.png",
       size: "w-16 h-16",
       details: "OCR and NLP pipeline for mass shootings analysis research using Tesseract and OpenCV",
       skills: ["C++", "OCR", "NLP", "Data Processing", "Research Tools"],
