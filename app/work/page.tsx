@@ -18,7 +18,7 @@ export default function Work() {
       logo: "/conduent.jpg",
       size: "w-16 h-16",
       skills: ["Python", "PyTorch", "TensorFlow", "Docker", "Machine Learning"],
-      details: "Working with the cybersecurity team to build defensive AI/ML models for threat detection and vulnerability management",
+      details: "Working with the cybersecurity team to build defensive AI/ML models for threat detection",
     },
     {
       role: "AI Research Assistant",
@@ -27,7 +27,7 @@ export default function Work() {
       logo: "/gt.jpg",
       size: "w-16 h-16",
       skills: ["Python", "NLP", "LLMs", "AI Agents"],
-      details: "Researching AI safety and sustainability in relation to LLMs and AI agents",
+      details: "Researching optimization and sustainability of local LLM and AI deployments",
     },
     {
       role: "Software Engineer Intern",

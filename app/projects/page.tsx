@@ -57,9 +57,9 @@ export default function Projects() {
       link: "#"
     },
     {
-      name: "Meetcode",
+      name: "MeetCode",
       description: "Chrome extension for collaborative leetcoding",
-      logo: "/meetcode.jpg",
+      logo: "/meetcode.png",
       size: "w-16 h-16",
       details: "Chrome extension for leetcoding with friends, comparing progress, and tracking ratings. Discontinued after LeetCode released similar paid functionality.",
       skills: ["JavaScript", "Chrome Extension API", "React", "HTML/CSS"],
@@ -77,7 +77,7 @@ export default function Projects() {
     {
       name: "MSExtractor",
       description: "Data extraction pipeline in C++ for mass shootings analysis research",
-      logo: "/MSExtractor.png",
+      logo: "/MSExtractor.jpg",
       size: "w-16 h-16",
       details: "OCR and NLP pipeline for mass shootings analysis research using Tesseract and OpenCV",
       skills: ["C++", "OCR", "NLP", "Data Processing", "Research Tools"],
