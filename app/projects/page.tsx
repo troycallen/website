@@ -21,6 +21,15 @@ export default function Projects() {
       link: "#"
     },
     {
+      name: "LitRA",
+      description: "AI Literature Review Assistant",
+      logo: "/litra.png",
+      size: "w-16 h-16",
+      details: "AI-powered literature review assistant with concept mapping and summarization using Python",
+      skills: ["Python", "GPT", "Llama", "NLP, Next.js"],
+      link: "#"
+    },
+    {
       name: "Memory Allocator",
       description: "Dynamic memory allocator in C++",
       logo: "/mem_alloc.jpg",
