@@ -13,7 +13,7 @@ export default function Projects() {
   const projects = [
     {
       name: "Goaldle",
-      description: "A Wordle-inspired game for soccer using computer vision",
+      description: "Wordle but for soccer using computer vision",
       logo: "/goaldle.png",
       size: "w-16 h-16",
       details: "Wordle-inspired game for guessing soccer players by analyzing CV-blurred videos",
@@ -54,6 +54,15 @@ export default function Projects() {
       size: "w-16 h-16",
       details: "Fault-tolerant distributed database with automated leader election and Raft consensus",
       skills: ["Rust", "Raft Consensus", "gRPC", "Docker", "Distributed Systems"],
+      link: "#"
+    },
+    {
+      name: "Meetcode",
+      description: "Chrome extension for collaborative leetcoding",
+      logo: "/meetcode.png",
+      size: "w-16 h-16",
+      details: "Chrome extension for leetcoding with friends, comparing progress, and tracking ratings. Discontinued after LeetCode released similar paid functionality.",
+      skills: ["JavaScript", "Chrome Extension API", "React", "HTML/CSS"],
       link: "#"
     },
     {
