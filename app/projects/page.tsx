@@ -59,7 +59,7 @@ export default function Projects() {
     {
       name: "Meetcode",
       description: "Chrome extension for collaborative leetcoding",
-      logo: "/meetcode.png",
+      logo: "/meetcode.jpg",
       size: "w-16 h-16",
       details: "Chrome extension for leetcoding with friends, comparing progress, and tracking ratings. Discontinued after LeetCode released similar paid functionality.",
       skills: ["JavaScript", "Chrome Extension API", "React", "HTML/CSS"],
