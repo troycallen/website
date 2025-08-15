@@ -22,12 +22,12 @@ export default function Work() {
     },
     {
       role: "AI Research Assistant",
-      company: "Georgia Tech CROCS",
+      company: "Georgia Institute of Technology",
       period: "Aug 2025 - Present",
       logo: "/gt.jpg",
       size: "w-16 h-16",
       skills: ["Python", "NLP", "LLMs", "AI Agents"],
-      details: "Researching optimization and sustainability of local LLM and AI deployments",
+      details: "Researching optimization and sustainability of local LLM and AI deployments under Dr. Nicholas Lytle",
     },
     {
       role: "Software Engineer Intern",
@@ -39,7 +39,7 @@ export default function Work() {
       details: "Built multimodal AI labeling platform using NLP, computer vision, and CUDA and optimized backend search",
     },
     {
-      role: "Machine Learning Engineer Intern",
+      role: "Software Engineer Intern",
       company: "Shepherd Center",
       period: "May 2024 - Dec 2024",
       logo: "/shepherd_center.jpg",
