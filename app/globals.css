@@ -4,7 +4,25 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --primary: 210 40% 75%;
+    --primary-foreground: 240 10% 20%;
+    --secondary: 165 30% 80%;
+    --secondary-foreground: 240 10% 20%;
+    --accent: 320 25% 85%;
+    --accent-foreground: 240 10% 20%;
+    --muted: 60 20% 92%;
+    --muted-foreground: 240 10% 45%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 20%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 210 40% 75%;
+  }
+
+  [data-theme="dark"] {
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
     --primary: 250 95% 65%;
     --primary-foreground: 0 0% 98%;
@@ -26,6 +44,31 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+  
+  html[data-theme="light"] {
+    background-color: white;
+    color: #1e293b;
+  }
+  
+  html[data-theme="dark"] {
+    background-color: black;
+    color: white;
+  }
+  
+  html[data-theme="light"] body {
+    background-color: white;
+    color: #1e293b;
+  }
+  
+  html[data-theme="dark"] body {
+    background-color: black;
+    color: white;
   }
 }
 

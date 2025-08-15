@@ -11,6 +11,7 @@ export default function Home() {
   const links = [
     { text: "work", link: "/work" },
     { text: "projects", link: "/projects" },
+    { text: "blog", link: "/blog" },
     { text: "resume", link: "/resume" },
   ]
 
@@ -33,9 +34,9 @@ export default function Home() {
   ]
 
   return (
-    <main className="flex min-h-screen flex-col justify-center items-center p-4 sm:p-24 bg-black text-white">
+    <main className="flex min-h-screen flex-col justify-center items-center p-4 sm:p-24 bg-background text-foreground">
       {/* Mobile */}
-      <div className="md:hidden flex flex-col rounded-3xl shadow-2xl shadow-gray-400 dark:shadow-black overflow-clip w-full max-w-[24em]">
+      <div className="md:hidden flex flex-col rounded-3xl shadow-2xl shadow-muted overflow-clip w-full max-w-[24em]">
         {/* Image container */}
         <div className="relative w-full aspect-4/5">
           {/* Profile pic */}
@@ -49,12 +50,12 @@ export default function Home() {
             />
           </div>
           {/* Bottom banner */}
-          <div className="z-10 p-6 pt-12 absolute left-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent w-full">
+          <div className="z-10 p-6 pt-12 absolute left-0 bottom-0 bg-gradient-to-t from-background/90 to-transparent w-full">
             <div className="flex flex-col">
-              <div className="font-semibold text-3xl text-white tracking-tight">
+              <div className="font-semibold text-3xl text-foreground tracking-tight">
                 Troy Allen
               </div>
-              <div className="font-medium text-lg text-gray-300 tracking-tight">
+              <div className="font-medium text-lg text-muted-foreground tracking-tight">
                 CS & ML @ Georgia Tech
               </div>
             </div>
@@ -68,7 +69,7 @@ export default function Home() {
                   <a
                     key={idx}
                     href={social.link}
-                    className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition ease-in-out hover:scale-110 hover:-rotate-12"
+                    className="bg-background/50 hover:bg-background/70 text-foreground p-2 rounded-full transition ease-in-out hover:scale-110 hover:-rotate-12"
                   >
                     {social.icon}
                   </a>
@@ -99,14 +100,14 @@ export default function Home() {
         <div className="flex flex-col justify-between flex-1 max-w-2xl">
           <div className="flex flex-col gap-4 lg:gap-6">
             <div className="flex flex-col gap-3">
-              <div className="font-bold text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight -ml-2">
+              <div className="font-bold text-5xl lg:text-6xl xl:text-7xl text-foreground tracking-tight -ml-2">
                 Troy Allen
               </div>
-              <div className="font-semibold text-xl lg:text-2xl xl:text-3xl text-gray-400 tracking-tight">
+              <div className="font-semibold text-xl lg:text-2xl xl:text-3xl text-muted-foreground tracking-tight">
                 CS & ML @ Georgia Tech
               </div>
             </div>
-            <div className="text-gray-400 text-lg leading-relaxed">
+            <div className="text-muted-foreground text-lg leading-relaxed">
               Experienced with and interested in AI, ML, NLP, and scaling systems. Hoping to have an impact on the world using technology.
             </div>
           </div>
@@ -117,7 +118,7 @@ export default function Home() {
                 <Link
                   key={idx}
                   href={link.link}
-                  className="text-gray-300 hover:text-white hover:bg-gray-800 px-4 py-2 rounded-lg transition font-medium hover:scale-105"
+                  className="text-muted-foreground hover:text-foreground hover:bg-muted px-4 py-2 rounded-lg transition font-medium hover:scale-105"
                 >
                   {link.text}
                 </Link>
@@ -130,7 +131,7 @@ export default function Home() {
                   rel="noreferrer noopener"
                   key={idx}
                   href={social.link}
-                  className="text-gray-400 hover:text-white hover:bg-gray-800 p-3 rounded-lg transition hover:scale-105"
+                  className="text-muted-foreground hover:text-foreground hover:bg-muted p-3 rounded-lg transition hover:scale-105"
                 >
                   {social.icon}
                 </a>

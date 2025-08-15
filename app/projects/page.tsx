@@ -86,11 +86,11 @@ export default function Projects() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-4xl mx-auto px-8 py-16">
         {/* Navigation breadcrumb */}
-        <nav className="text-gray-400 mb-16 font-mono text-sm">
-          <Link href="/" className="hover:text-white transition-colors">
+        <nav className="text-muted-foreground mb-16 font-mono text-sm">
+          <Link href="/" className="hover:text-foreground transition-colors">
             troy
           </Link>
           <span className="mx-2">/</span>
@@ -128,16 +128,16 @@ export default function Projects() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-xl font-medium text-white mb-1">
+                      <h3 className="text-xl font-medium text-foreground mb-1">
                         {project.name}
                       </h3>
-                      <p className="text-gray-400 leading-relaxed">
+                      <p className="text-muted-foreground leading-relaxed">
                         {project.description}
                       </p>
                       
                       {isExpanded && (
                         <div className="mt-6 space-y-4">
-                          <div className="text-gray-300 leading-relaxed">
+                          <div className="text-muted-foreground leading-relaxed">
                             • {project.details}
                           </div>
                           
@@ -146,7 +146,7 @@ export default function Projects() {
                             {project.skills.map((skill, skillIndex) => (
                               <span 
                                 key={skillIndex}
-                                className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
+                                className="px-3 py-1 bg-muted rounded-full text-sm text-muted-foreground"
                               >
                                 {skill}
                               </span>

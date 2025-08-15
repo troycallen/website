@@ -8,12 +8,12 @@ export default function Resume() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center">
+    <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
       <div className="text-center">
-        <p className="text-gray-400 mb-4">Redirecting to resume...</p>
+        <p className="text-muted-foreground mb-4">Redirecting to resume...</p>
         <a 
           href="/resume.pdf" 
-          className="text-gray-300 hover:text-white transition-colors underline"
+          className="text-muted-foreground hover:text-foreground transition-colors underline"
         >
           Click here if not redirected automatically
         </a>

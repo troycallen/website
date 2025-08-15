@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Space_Mono } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "@/lib/theme-context"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const inter = Inter({ 
   subsets: ["latin"], 
@@ -27,7 +29,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans bg-black text-white antialiased leading-relaxed`}>{children}</body>
+      <body className={`${inter.variable} font-sans bg-background text-foreground antialiased leading-relaxed`}>
+        <ThemeProvider>
+          {children}
+          <ThemeToggle />
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
