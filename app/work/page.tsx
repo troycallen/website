@@ -48,7 +48,7 @@ export default function Work() {
       details: "Built neural networks and APIs to aid clinicians in pressure ulcer prediction in spinal cord injury patients"
     },
     {
-      role: "Graduate Research Assistant",
+      role: "Research Assistant",
       company: "Florida State University",
       period: "Jun 2021 - May 2022",
       logo: "/fsu.jpg",
