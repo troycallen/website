@@ -39,7 +39,7 @@ export default function Work() {
       details: "Built multimodal AI labeling platform using NLP, computer vision, and CUDA and optimized backend search",
     },
     {
-      role: "Software Engineer Intern",
+      role: "Machine Learning Engineer Intern",
       company: "Shepherd Center",
       period: "May 2024 - Dec 2024",
       logo: "/shepherd_center.jpg",
