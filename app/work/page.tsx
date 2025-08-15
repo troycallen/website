@@ -21,7 +21,7 @@ export default function Work() {
       details: "Working with the cybersecurity team to build defensive AI/ML models for threat detection",
     },
     {
-      role: "AI Research Assistant",
+      role: "Graduate AI Researcher",
       company: "Georgia Institute of Technology",
       period: "Aug 2025 - Present",
       logo: "/gt.jpg",
