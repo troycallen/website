@@ -12,6 +12,15 @@ export default function Projects() {
   }
   const projects = [
     {
+      name: "EnviroLLM",
+      description: "Local LLM resource tracking and optimization",
+      logo: "/envirollm.png",
+      size: "w-16 h-16",
+      details: "Local LLM resource tracking and optimization tool with real-time monitoring and energy analysis",
+      skills: ["Python", "PyTorch", "TensorFlow", "Docker", "LLMs", "TypeScript"],
+      link: "#"
+    },
+    {
       name: "Goaldle",
       description: "Wordle but for soccer using computer vision",
       logo: "/goaldle.png",
