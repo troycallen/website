@@ -108,8 +108,8 @@ export default function Home() {
               </div>
             </div>
             <div className="text-muted-foreground text-lg leading-relaxed">
-              Experienced with and interested in AI, ML, and scalability. Hoping to have an impact on the world using technology.
-              Also a big fan of surfing, psychology, and algorithms.
+              Experienced with and interested in AI, ML, and scalability. Also a big fan of C++, surfing, psychology, and algorithms. Hoping to have an impact on the world using technology.
+              
             </div>
           </div>
           
