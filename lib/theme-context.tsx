@@ -32,9 +32,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       document.documentElement.setAttribute('data-theme', theme)
       document.documentElement.className = theme
       
-      // Also apply to body for immediate effect
-      document.body.style.backgroundColor = theme === 'dark' ? 'black' : 'white'
-      document.body.style.color = theme === 'dark' ? 'white' : '#1e293b'
+      // Remove any inline styles to let CSS variables take over
+      document.body.style.backgroundColor = ''
+      document.body.style.color = ''
     }
   }, [theme, mounted])
 

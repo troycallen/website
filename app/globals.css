@@ -41,43 +41,34 @@
 }
 
 @layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   
-  html {
+  html, body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-  }
-  
-  html[data-theme="light"] {
-    background-color: hsl(0 0% 98%);
-    color: hsl(240 10% 15%);
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(0,0,0,0.08) 1px, transparent 0);
-    background-size: 20px 20px;
-  }
-  
-  html[data-theme="dark"] {
-    background-color: hsl(0 0% 8%);
-    color: hsl(0 0% 85%);
     background-image: 
       radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
     background-size: 20px 20px;
   }
   
-  html[data-theme="light"] body {
-    background-color: hsl(0 0% 98%);
-    color: hsl(240 10% 15%);
+  html[data-theme="light"], html[data-theme="light"] body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     background-image: 
       radial-gradient(circle at 1px 1px, rgba(0,0,0,0.08) 1px, transparent 0);
     background-size: 20px 20px;
   }
   
-  html[data-theme="dark"] body {
-    background-color: hsl(0 0% 8%);
-    color: hsl(0 0% 85%);
+  html[data-theme="dark"], html[data-theme="dark"] body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     background-image: 
       radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
     background-size: 20px 20px;
