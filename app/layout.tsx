@@ -11,6 +11,12 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"]
 })
 
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  variable: "--font-space-mono",
+  weight: ["400", "700"]
+})
+
 export const metadata: Metadata = {
   title: "Troy Allen",
   description: "Portfolio of Troy Allen",
@@ -29,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans bg-background text-foreground antialiased leading-relaxed`}>
+      <body className={`${inter.variable} ${spaceMono.variable} font-mono bg-background text-foreground antialiased leading-relaxed`}>
         <ThemeProvider>
           {children}
           <ThemeToggle />

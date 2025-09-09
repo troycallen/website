@@ -81,18 +81,16 @@ export default function Work() {
       <div className="max-w-4xl mx-auto px-8 py-16">
         {/* Navigation breadcrumb */}
         <nav className="text-muted-foreground mb-16 font-mono text-sm">
-          <Link href="/" className="hover:text-foreground transition-colors">
+          <Link href="/" className="hover:text-primary transition-colors">
             troy
           </Link>
           <span className="mx-2">/</span>
-          <span>...</span>
-          <span className="mx-2">/</span>
-          <span>work</span>
+          <span className="text-primary">work</span>
         </nav>
 
         {/* Work section */}
         <section className="mb-16">
-          <h1 className="text-4xl font-bold mb-12">work</h1>
+          <h1 className="text-4xl font-bold mb-12 text-primary">work</h1>
 
           <div className="space-y-5">
             {experiences.map((exp, index) => {
@@ -144,7 +142,7 @@ export default function Work() {
                         )}
                       </div>
                     </div>
-                    <div className="text-right text-sm text-muted-foreground ml-4">
+                    <div className="text-right text-sm text-secondary ml-4">
                       {exp.period}
                     </div>
                   </div>

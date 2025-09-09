@@ -4,39 +4,39 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --primary: 210 40% 75%;
-    --primary-foreground: 240 10% 20%;
-    --secondary: 165 30% 80%;
-    --secondary-foreground: 240 10% 20%;
-    --accent: 320 25% 85%;
-    --accent-foreground: 240 10% 20%;
+    --background: 0 0% 98%;
+    --foreground: 240 10% 15%;
+    --primary: 60 15% 35%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 200 20% 40%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 98%;
     --muted: 60 20% 92%;
-    --muted-foreground: 240 10% 45%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 20%;
+    --muted-foreground: 240 10% 55%;
+    --card: 0 0% 96%;
+    --card-foreground: 240 10% 15%;
     --border: 220 20% 88%;
     --input: 220 20% 88%;
-    --ring: 210 40% 75%;
+    --ring: 60 15% 35%;
   }
 
   [data-theme="dark"] {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 98%;
-    --primary: 250 95% 65%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 85%;
+    --primary: 60 9% 50%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 190 90% 50%;
+    --secondary: 200 15% 45%;
     --secondary-foreground: 0 0% 98%;
-    --accent: 280 75% 60%;
+    --accent: 25 95% 53%;
     --accent-foreground: 0 0% 98%;
     --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 65%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --border: 240 5% 25%;
-    --input: 240 5% 25%;
-    --ring: 250 95% 65%;
+    --muted-foreground: 240 5% 40%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 85%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 60 9% 50%;
   }
 }
 
@@ -52,23 +52,35 @@
   }
   
   html[data-theme="light"] {
-    background-color: white;
-    color: #1e293b;
+    background-color: hsl(0 0% 98%);
+    color: hsl(240 10% 15%);
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(0,0,0,0.08) 1px, transparent 0);
+    background-size: 20px 20px;
   }
   
   html[data-theme="dark"] {
-    background-color: black;
-    color: white;
+    background-color: hsl(0 0% 8%);
+    color: hsl(0 0% 85%);
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 20px 20px;
   }
   
   html[data-theme="light"] body {
-    background-color: white;
-    color: #1e293b;
+    background-color: hsl(0 0% 98%);
+    color: hsl(240 10% 15%);
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(0,0,0,0.08) 1px, transparent 0);
+    background-size: 20px 20px;
   }
   
   html[data-theme="dark"] body {
-    background-color: black;
-    color: white;
+    background-color: hsl(0 0% 8%);
+    color: hsl(0 0% 85%);
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 20px 20px;
   }
 }
 

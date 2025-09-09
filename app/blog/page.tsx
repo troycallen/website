@@ -13,18 +13,16 @@ export default function Blog() {
       <div className="max-w-4xl mx-auto px-8 py-16">
         {/* Navigation breadcrumb */}
         <nav className="text-muted-foreground mb-16 font-mono text-sm">
-          <Link href="/" className="hover:text-foreground transition-colors">
+          <Link href="/" className="hover:text-primary transition-colors">
             troy
           </Link>
           <span className="mx-2">/</span>
-          <span>...</span>
-          <span className="mx-2">/</span>
-          <span>blog</span>
+          <span className="text-primary">blog</span>
         </nav>
 
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-4">blog</h1>
+          <h1 className="text-4xl font-bold mb-4 text-primary">blog</h1>
           <p className="text-muted-foreground text-lg">
             Mostly have this to type into the void and look back on later.
           </p>
@@ -33,7 +31,7 @@ export default function Blog() {
         {/* Single blog post */}
         <article className="border-b border-border pb-8">
           <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-4 text-sm text-secondary">
               <time>{post.date}</time>
               <span>•</span>
               <span>{post.readTime}</span>

@@ -83,7 +83,7 @@ export default function Home() {
       {/* Web */}
       <div className="hidden md:flex flex-col md:flex-row gap-8 lg:gap-12 max-w-6xl items-center">
         {/* Profile pic */}
-        <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 flex-shrink-0">
+        <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0">
           <Image
             src="/surf.png"
             alt="Troy Allen"
@@ -118,7 +118,7 @@ export default function Home() {
                 <Link
                   key={idx}
                   href={link.link}
-                  className="text-muted-foreground hover:text-foreground hover:bg-muted px-4 py-2 rounded-lg transition font-medium hover:scale-105"
+                  className="text-primary hover:text-accent hover:bg-muted px-4 py-2 rounded-lg transition font-normal hover:scale-105"
                 >
                   {link.text}
                 </Link>

@@ -99,18 +99,16 @@ export default function Projects() {
       <div className="max-w-4xl mx-auto px-8 py-16">
         {/* Navigation breadcrumb */}
         <nav className="text-muted-foreground mb-16 font-mono text-sm">
-          <Link href="/" className="hover:text-foreground transition-colors">
+          <Link href="/" className="hover:text-primary transition-colors">
             troy
           </Link>
           <span className="mx-2">/</span>
-          <span>...</span>
-          <span className="mx-2">/</span>
-          <span>projects</span>
+          <span className="text-primary">projects</span>
         </nav>
 
         {/* Projects section */}
         <section>
-          <h1 className="text-4xl font-bold mb-12">projects</h1>
+          <h1 className="text-4xl font-bold mb-12 text-primary">projects</h1>
 
           <div className="space-y-5">
             {projects.map((project, index) => {
