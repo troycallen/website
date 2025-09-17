@@ -32,8 +32,7 @@ export default function SpotifyNowPlaying() {
 
     fetchNowPlaying()
 
-    // Refresh every 10 seconds for testing (change back to 30000 later)
-    const interval = setInterval(fetchNowPlaying, 10000)
+    const interval = setInterval(fetchNowPlaying, 30000)
     return () => clearInterval(interval)
   }, [])
 
