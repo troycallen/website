@@ -34,6 +34,7 @@ async function getNowPlaying() {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: 'no-store'
   })
 
   if (response.status === 204 || response.status > 400) {
@@ -60,7 +61,13 @@ export async function GET() {
       songUrl: response.item.external_urls.spotify,
     }
 
-    return NextResponse.json(song)
+    return NextResponse.json(song, {
+      headers: {
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+      }
+    })
   } catch (error) {
     console.error('Error fetching Spotify data:', error)
     return NextResponse.json({ isPlaying: false }, { status: 500 })
