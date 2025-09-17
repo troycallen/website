@@ -80,64 +80,77 @@ export default function Home() {
       </div>
 
       {/* Web */}
-      <div className="hidden md:flex flex-col md:flex-row gap-8 lg:gap-12 max-w-6xl items-center">
-        {/* Profile pic */}
-        <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0">
-          <Image
-            src="/surf.png"
-            alt="Troy Allen"
-            fill
-            className={`h-full w-full rounded-xl shadow-xl transition ease-in-out hover:scale-110 duration-500 hover:cursor-pointer object-cover ${
-              imageEffect ? "animate-pulse" : ""
-            }`}
-            onClick={() => setImageEffect(true)}
-            onAnimationEnd={() => setImageEffect(false)}
-          />
+      <div className="hidden md:flex flex-col max-w-5xl">
+        <div className="flex flex-row gap-8 lg:gap-12 items-center mb-8">
+          {/* Profile pic */}
+          <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0">
+            <Image
+              src="/surf.png"
+              alt="Troy Allen"
+              fill
+              className={`h-full w-full rounded-xl shadow-xl transition ease-in-out hover:scale-110 duration-500 hover:cursor-pointer object-cover ${
+                imageEffect ? "animate-pulse" : ""
+              }`}
+              onClick={() => setImageEffect(true)}
+              onAnimationEnd={() => setImageEffect(false)}
+            />
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-col justify-between flex-1 max-w-2xl">
+            <div className="flex flex-col gap-4 lg:gap-6">
+              <div className="flex flex-col gap-3">
+                <div className="font-bold text-5xl lg:text-6xl xl:text-7xl text-foreground tracking-tight -ml-2">
+                  Troy Allen
+                </div>
+                <div className="font-semibold text-xl lg:text-2xl xl:text-3xl text-muted-foreground tracking-tight">
+                  CS & ML @ Georgia Tech
+                </div>
+              </div>
+              <div className="text-muted-foreground text-lg leading-relaxed">
+                Experienced with and interested in AI, ML, and scalability. Also a big fan of C++, surfing, psychology, and algorithms. Hoping to have an impact on the world using technology.
+              </div>
+            </div>
+            
+            <div className="flex flex-row justify-between items-center gap-4 mt-6">
+              <div className="flex flex-row gap-1 items-center -ml-4">
+                {links.map((link, idx) => (
+                  <Link
+                    key={idx}
+                    href={link.link}
+                    className="text-primary hover:text-accent hover:bg-muted px-4 py-2 rounded-lg transition font-normal hover:scale-105"
+                  >
+                    {link.text}
+                  </Link>
+                ))}
+              </div>
+              <div className="flex flex-row gap-3 items-center">
+                {socials.map((social, idx) => (
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    key={idx}
+                    href={social.link}
+                    className="text-muted-foreground hover:text-foreground hover:bg-muted p-3 rounded-lg transition hover:scale-105"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Content */}
-        <div className="flex flex-col justify-between flex-1 max-w-2xl">
-          <div className="flex flex-col gap-4 lg:gap-6">
-            <div className="flex flex-col gap-3">
-              <div className="font-bold text-5xl lg:text-6xl xl:text-7xl text-foreground tracking-tight -ml-2">
-                Troy Allen
-              </div>
-              <div className="font-semibold text-xl lg:text-2xl xl:text-3xl text-muted-foreground tracking-tight">
-                CS & ML @ Georgia Tech
-              </div>
-            </div>
-            <div className="text-muted-foreground text-lg leading-relaxed">
-              Experienced with and interested in AI, ML, and scalability. Also a big fan of C++, surfing, psychology, and algorithms. Hoping to have an impact on the world using technology.
-              
-            </div>
-          </div>
-          
-          <div className="flex flex-row justify-between items-center gap-4 mt-6">
-            <div className="flex flex-row gap-1 items-center -ml-4">
-              {links.map((link, idx) => (
-                <Link
-                  key={idx}
-                  href={link.link}
-                  className="text-primary hover:text-accent hover:bg-muted px-4 py-2 rounded-lg transition font-normal hover:scale-105"
-                >
-                  {link.text}
-                </Link>
-              ))}
-            </div>
-            <div className="flex flex-row gap-3 items-center">
-              {socials.map((social, idx) => (
-                <a
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  key={idx}
-                  href={social.link}
-                  className="text-muted-foreground hover:text-foreground hover:bg-muted p-3 rounded-lg transition hover:scale-105"
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-          </div>
+        {/* GitHub Contribution Graph */}
+        <div className="w-full">
+          <Image
+            src="https://ghchart.rshah.org/404040/troycallen"
+            alt="Troy's GitHub Contribution Graph"
+            width={735}
+            height={112}
+            className="rounded-lg w-full opacity-80"
+            unoptimized
+          />
         </div>
       </div>
     </main>
