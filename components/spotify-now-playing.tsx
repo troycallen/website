@@ -32,8 +32,8 @@ export default function SpotifyNowPlaying() {
 
     fetchNowPlaying()
 
-    // Refresh every 30 seconds
-    const interval = setInterval(fetchNowPlaying, 30000)
+    // Refresh every 10 seconds for testing (change back to 30000 later)
+    const interval = setInterval(fetchNowPlaying, 10000)
     return () => clearInterval(interval)
   }, [])
 
@@ -71,12 +71,9 @@ export default function SpotifyNowPlaying() {
         <div className="ml-1 w-1 h-1 bg-green-500 rounded-full animate-pulse"></div>
       </div>
 
-      <div className="flex flex-col min-w-0">
+      <div className="min-w-0">
         <div className="text-sm font-medium text-foreground truncate group-hover:text-primary transition-colors">
-          {track.title}
-        </div>
-        <div className="text-xs truncate">
-          by {track.artist}
+          {track.title} <span className="text-muted-foreground font-normal">by {track.artist}</span>
         </div>
       </div>
     </a>
