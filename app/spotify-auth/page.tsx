@@ -2,7 +2,7 @@
 
 export default function SpotifyAuth() {
   const handleAuth = () => {
-    const client_id = 'PASTE_YOUR_SPOTIFY_CLIENT_ID_HERE' // Replace with your real Client ID from Spotify Dashboard
+    const client_id = 'e92325f6b43b488c974878cb204b8f42' 
     const redirect_uri = encodeURIComponent(`${window.location.origin}/api/auth/callback/spotify`)
     const scope = encodeURIComponent('user-read-currently-playing user-read-playback-state')
 
