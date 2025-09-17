@@ -165,7 +165,7 @@ export default function Home() {
         {/* GitHub Contribution Graph */}
         <div className="w-full mt-12">
           <Image
-            src={theme === 'dark' ? "https://ghchart.rshah.org/2a4b5c/troycallen" : "https://ghchart.rshah.org/4a8fc7/troycallen"}
+            src={theme === 'dark' ? "https://ghchart.rshah.org/2a4b5c/troycallen" : "https://ghchart.rshah.org/2d5a87/troycallen"}
             alt="Troy's GitHub Contribution Graph"
             width={735}
             height={112}

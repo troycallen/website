@@ -41,20 +41,20 @@
 
   [data-theme="light"] {
     --background: 45 40% 92%;
-    --foreground: 210 25% 15%;
-    --primary: 195 60% 40%;
-    --primary-foreground: 45 40% 92%;
-    --secondary: 200 35% 35%;
-    --secondary-foreground: 45 40% 92%;
-    --accent: 25 75% 50%;
-    --accent-foreground: 45 40% 92%;
-    --muted: 45 20% 78%;
-    --muted-foreground: 210 15% 45%;
-    --card: 45 30% 85%;
-    --card-foreground: 210 25% 15%;
-    --border: 45 20% 70%;
-    --input: 45 20% 70%;
-    --ring: 195 60% 45%;
+    --foreground: 210 25% 10%;
+    --primary: 195 70% 35%;
+    --primary-foreground: 45 40% 95%;
+    --secondary: 200 40% 30%;
+    --secondary-foreground: 45 40% 95%;
+    --accent: 25 85% 45%;
+    --accent-foreground: 45 40% 95%;
+    --muted: 45 15% 82%;
+    --muted-foreground: 210 20% 35%;
+    --card: 45 25% 88%;
+    --card-foreground: 210 25% 10%;
+    --border: 45 15% 75%;
+    --input: 45 15% 75%;
+    --ring: 195 70% 40%;
   }
 }
 
