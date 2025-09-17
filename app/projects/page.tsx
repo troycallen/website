@@ -110,15 +110,15 @@ export default function Projects() {
 
         {/* Projects section */}
         <section>
-          <h1 className="text-4xl font-bold mb-12 text-primary">projects</h1>
+          <h1 className="text-4xl font-bold mb-12 text-primary sand-glow">projects</h1>
 
           <div className="space-y-5">
             {projects.map((project, index) => {
               const isExpanded = expandedIndex === index
               return (
-                <div 
-                  key={index} 
-                  className="cursor-pointer transition-all duration-200"
+                <div
+                  key={index}
+                  className="cursor-pointer transition-all duration-200 ocean-depth rounded-lg p-4 hover:bg-muted/20"
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-start gap-4 py-2">

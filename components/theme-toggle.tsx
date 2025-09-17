@@ -16,12 +16,12 @@ export function ThemeToggle() {
     return (
       <button
         onClick={handleClick}
-        className="fixed top-6 right-6 z-50 p-3 rounded-full border-2 transition-colors shadow-lg"
+        className="fixed top-6 right-6 z-50 p-3 rounded-full border-2 transition-all duration-300 shadow-lg ocean-ripple ocean-depth hover:scale-110"
         aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        style={{ 
-          backgroundColor: theme === 'light' ? 'white' : '#1f2937',
-          borderColor: theme === 'light' ? '#d1d5db' : '#4b5563',
-          color: theme === 'light' ? '#1f2937' : '#fbbf24'
+        style={{
+          backgroundColor: theme === 'light' ? 'hsl(45 40% 92%)' : 'hsl(210 15% 12%)',
+          borderColor: theme === 'light' ? 'hsl(195 60% 40%)' : 'hsl(195 70% 65%)',
+          color: theme === 'light' ? 'hsl(195 60% 40%)' : 'hsl(25 85% 60%)'
         }}
       >
         {theme === 'light' ? (

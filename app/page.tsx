@@ -97,7 +97,7 @@ export default function Home() {
       <div className="hidden md:flex flex-col max-w-4xl">
         <div className="flex flex-row gap-16 lg:gap-20 items-center mb-16">
           {/* Profile pic */}
-          <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0">
+          <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0 ocean-depth">
             <Image
               src="/surf.png"
               alt="Troy Allen"
@@ -114,7 +114,7 @@ export default function Home() {
           <div className="flex flex-col justify-between flex-1 max-w-2xl">
             <div className="flex flex-col gap-3 lg:gap-4">
               <div className="flex flex-col gap-3">
-                <div className="font-bold text-5xl lg:text-6xl xl:text-7xl text-foreground tracking-tight -ml-2">
+                <div className="font-bold text-5xl lg:text-6xl xl:text-7xl text-foreground tracking-tight -ml-2 sand-glow">
                   Troy Allen
                 </div>
                 <div className="font-semibold text-xl lg:text-2xl xl:text-3xl text-muted-foreground tracking-tight">

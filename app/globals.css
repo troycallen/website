@@ -71,25 +71,22 @@
   html, body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
-    background-size: 20px 20px;
   }
-  
+
   html[data-theme="light"], html[data-theme="light"] body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(0,0,0,0.08) 1px, transparent 0);
-    background-size: 20px 20px;
+    background-image:
+      linear-gradient(0deg, transparent 50%, rgba(0, 0, 0, 0.02) 50%);
+    background-size: 100% 4px;
   }
-  
+
   html[data-theme="dark"], html[data-theme="dark"] body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
-    background-size: 20px 20px;
+    background-image:
+      linear-gradient(0deg, transparent 50%, rgba(255, 255, 255, 0.03) 50%);
+    background-size: 100% 4px;
   }
 }
 
@@ -105,4 +102,79 @@ svg path {
 
 svg g {
   fill: inherit;
+}
+
+/* Surfing theme enhancements */
+@layer components {
+  /* Wave animation for elements */
+  .wave-hover {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wave-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(70, 143, 199, 0.15), transparent);
+    transition: left 0.8s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .wave-hover:hover::before {
+    left: 100%;
+  }
+
+  .wave-hover > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Ocean ripple effect for buttons */
+  .ocean-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ocean-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(70, 143, 199, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+  }
+
+  .ocean-ripple:hover::after {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Sandy text glow for light mode */
+  [data-theme="light"] .sand-glow {
+    text-shadow: 0 0 10px rgba(255, 182, 130, 0.3);
+  }
+
+  /* Ocean depth shadow for dark mode */
+  [data-theme="dark"] .ocean-depth {
+    box-shadow: 0 8px 32px rgba(42, 75, 92, 0.3);
+  }
+
+  /* Coral accent gradients */
+  .coral-gradient {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(25 75% 65%));
+  }
+
+  /* Ocean gradient */
+  .ocean-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(200 80% 45%));
+  }
 } 

@@ -24,14 +24,14 @@ export default function Blog() {
 
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-4 text-primary">blog</h1>
+          <h1 className="text-4xl font-bold mb-4 text-primary sand-glow">blog</h1>
           <p className="text-muted-foreground text-lg">
             Mostly have this to type into the void and look back on later.
           </p>
         </div>
 
         {/* Single blog post */}
-        <article className="border-b border-border pb-8">
+        <article className="border-b border-border pb-8 ocean-depth rounded-lg p-6 hover:bg-muted/10">
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-4 text-sm text-secondary">
               <time>{post.date}</time>
