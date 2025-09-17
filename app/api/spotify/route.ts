@@ -24,11 +24,22 @@ async function getAccessToken() {
     }),
   })
 
-  return response.json()
+  const data = await response.json()
+  console.log('Token refresh response:', response.status, data)
+
+  if (!response.ok) {
+    throw new Error(`Token refresh failed: ${JSON.stringify(data)}`)
+  }
+
+  return data
 }
 
 async function getNowPlaying() {
-  const { access_token } = await getAccessToken()
+  const tokenData = await getAccessToken()
+  const { access_token } = tokenData
+
+  console.log('Fresh token data:', { expires_in: tokenData.expires_in })
+  console.log('Using access token:', access_token.substring(0, 20) + '...')
 
   const response = await fetch(SPOTIFY_NOW_PLAYING_URL, {
     headers: {
@@ -37,11 +48,23 @@ async function getNowPlaying() {
     cache: 'no-store'
   })
 
-  if (response.status === 204 || response.status > 400) {
+  console.log('Spotify API response status:', response.status)
+
+  if (response.status === 204) {
+    console.log('No content - nothing is playing')
     return null
   }
 
-  return response.json()
+  if (response.status > 400) {
+    console.log('Error status:', response.status)
+    const errorText = await response.text()
+    console.log('Error response:', errorText)
+    return null
+  }
+
+  const data = await response.json()
+  console.log('Spotify API data:', JSON.stringify(data, null, 2))
+  return data
 }
 
 export async function GET() {
