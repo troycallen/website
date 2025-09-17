@@ -12,7 +12,6 @@ export default function Home() {
     { text: "work", link: "/work" },
     { text: "projects", link: "/projects" },
     { text: "blog", link: "/blog" },
-    { text: "resume", link: "/resume" },
   ]
 
   const socials = [
