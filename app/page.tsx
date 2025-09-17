@@ -44,6 +44,9 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col justify-center items-center p-4 sm:p-24 bg-background text-foreground">
+      {/* Top grey bar */}
+      <div className="w-full max-w-4xl h-1 bg-muted mb-16"></div>
+
       {/* Mobile */}
       <div className="md:hidden flex flex-col rounded-3xl shadow-2xl shadow-muted overflow-clip w-full max-w-[24em]">
         {/* Image container */}
@@ -166,6 +169,9 @@ export default function Home() {
           />
         </div>
       </div>
+
+      {/* Bottom grey bar */}
+      <div className="w-full max-w-4xl h-1 bg-muted mt-16"></div>
     </main>
   )
 }

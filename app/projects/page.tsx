@@ -97,6 +97,8 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-4xl mx-auto px-8 py-16">
+        {/* Top grey bar */}
+        <div className="w-full h-1 bg-muted mb-16"></div>
         {/* Navigation breadcrumb */}
         <nav className="text-muted-foreground mb-16 font-mono text-sm">
           <Link href="/" className="hover:text-primary transition-colors">
@@ -169,6 +171,9 @@ export default function Projects() {
             })}
           </div>
         </section>
+
+        {/* Bottom grey bar */}
+        <div className="w-full h-1 bg-muted mt-16"></div>
       </div>
     </div>
   )
