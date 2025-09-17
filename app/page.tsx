@@ -5,6 +5,7 @@ import { Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import { useTheme } from "@/lib/theme-context"
+import SpotifyNowPlaying from "@/components/spotify-now-playing"
 
 export default function Home() {
   const [imageEffect, setImageEffect] = useState<boolean>(false)
@@ -111,7 +112,7 @@ export default function Home() {
 
           {/* Content */}
           <div className="flex flex-col justify-between flex-1 max-w-2xl">
-            <div className="flex flex-col gap-6 lg:gap-8">
+            <div className="flex flex-col gap-3 lg:gap-4">
               <div className="flex flex-col gap-3">
                 <div className="font-bold text-5xl lg:text-6xl xl:text-7xl text-foreground tracking-tight -ml-2">
                   Troy Allen
@@ -121,14 +122,18 @@ export default function Home() {
                 </div>
               </div>
               <div className="text-muted-foreground text-lg leading-relaxed">
-              Interested in AI, ML, and scalability.
-              <br />
-              "Wherever you go, go with all your heart." 
-              <br />
+                Interested in AI, ML, and scalability.
+                <br />
+                "Wherever you go, go with all your heart."
+              </div>
+
+            {/* Spotify Now Playing */}
+            <div className="mt-3">
+              <SpotifyNowPlaying />
             </div>
             </div>
             
-            <div className="flex flex-row justify-between items-center gap-8 mt-10">
+            <div className="flex flex-row justify-between items-center gap-8 mt-6">
               <div className="flex flex-row gap-2 items-center -ml-4">
                 {links.map((link, idx) => (
                   <Link
