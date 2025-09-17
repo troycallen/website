@@ -118,10 +118,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="text-muted-foreground text-lg leading-relaxed">
-    Interested in AI, ML, and scalability.
-    <br />
-    Hoping to have an impact on the world using technology.
-  </div>
+              Interested in AI, ML, and scalability.
+              <br />
+              "Wherever you go, go with all your heart." 
+              <br />
+            </div>
             </div>
             
             <div className="flex flex-row justify-between items-center gap-8 mt-10">
