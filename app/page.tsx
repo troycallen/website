@@ -4,9 +4,19 @@ import Image from "next/image"
 import { Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import { useTheme } from "@/lib/theme-context"
 
 export default function Home() {
   const [imageEffect, setImageEffect] = useState<boolean>(false)
+  
+  // Safe theme access with fallback
+  let theme = 'dark'
+  try {
+    theme = useTheme().theme
+  } catch {
+    // Fallback if theme context is not available
+    theme = 'dark'
+  }
 
   const links = [
     { text: "work", link: "/work" },
@@ -80,8 +90,8 @@ export default function Home() {
       </div>
 
       {/* Web */}
-      <div className="hidden md:flex flex-col max-w-5xl">
-        <div className="flex flex-row gap-8 lg:gap-12 items-center mb-8">
+      <div className="hidden md:flex flex-col max-w-4xl">
+        <div className="flex flex-row gap-16 lg:gap-20 items-center mb-16">
           {/* Profile pic */}
           <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0">
             <Image
@@ -98,7 +108,7 @@ export default function Home() {
 
           {/* Content */}
           <div className="flex flex-col justify-between flex-1 max-w-2xl">
-            <div className="flex flex-col gap-4 lg:gap-6">
+            <div className="flex flex-col gap-6 lg:gap-8">
               <div className="flex flex-col gap-3">
                 <div className="font-bold text-5xl lg:text-6xl xl:text-7xl text-foreground tracking-tight -ml-2">
                   Troy Allen
@@ -108,12 +118,14 @@ export default function Home() {
                 </div>
               </div>
               <div className="text-muted-foreground text-lg leading-relaxed">
-                Experienced with and interested in AI, ML, and scalability. Also a big fan of C++, surfing, psychology, and algorithms. Hoping to have an impact on the world using technology.
-              </div>
+    Interested in AI, ML, and scalability.
+    <br />
+    Hoping to have an impact on the world using technology.
+  </div>
             </div>
             
-            <div className="flex flex-row justify-between items-center gap-4 mt-6">
-              <div className="flex flex-row gap-1 items-center -ml-4">
+            <div className="flex flex-row justify-between items-center gap-8 mt-10">
+              <div className="flex flex-row gap-2 items-center -ml-4">
                 {links.map((link, idx) => (
                   <Link
                     key={idx}
@@ -124,7 +136,7 @@ export default function Home() {
                   </Link>
                 ))}
               </div>
-              <div className="flex flex-row gap-3 items-center">
+              <div className="flex flex-row gap-4 items-center">
                 {socials.map((social, idx) => (
                   <a
                     target="_blank"
@@ -142,13 +154,13 @@ export default function Home() {
         </div>
 
         {/* GitHub Contribution Graph */}
-        <div className="w-full">
+        <div className="w-full mt-12">
           <Image
-            src="https://ghchart.rshah.org/404040/troycallen"
+            src={theme === 'dark' ? "https://ghchart.rshah.org/1a1a1a/troycallen" : "https://ghchart.rshah.org/troycallen"}
             alt="Troy's GitHub Contribution Graph"
             width={735}
             height={112}
-            className="rounded-lg w-full opacity-80"
+            className="rounded-lg w-full opacity-90"
             unoptimized
           />
         </div>
