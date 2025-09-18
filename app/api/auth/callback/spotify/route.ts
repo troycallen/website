@@ -41,12 +41,23 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: data.error }, { status: 400 })
     }
 
-    // Return the tokens (you'll copy the refresh_token to your .env)
+    // Store the refresh token in the database
+    try {
+      const { Redis } = await import('@upstash/redis')
+      const redis = Redis.fromEnv()
+      await redis.set('spotify_refresh_token', data.refresh_token)
+      console.log('✅ Stored refresh token in Redis database')
+    } catch (error) {
+      console.log('⚠️  Could not store in database:', error.message)
+    }
+
+    // Return the tokens
     return NextResponse.json({
-      message: 'Success! Copy this NEW refresh_token to your .env.local file:',
+      message: 'Success! Refresh token stored automatically. You can also copy it to .env.local as backup:',
       refresh_token: data.refresh_token,
       access_token: data.access_token,
       expires_in: data.expires_in,
+      note: 'The refresh token has been automatically stored in the database.'
     })
 
   } catch (error) {
