@@ -32,7 +32,7 @@ export default function SpotifyNowPlaying() {
 
     fetchNowPlaying()
 
-    const interval = setInterval(fetchNowPlaying, 30000)
+    const interval = setInterval(fetchNowPlaying, 60000) 
     return () => clearInterval(interval)
   }, [])
 
