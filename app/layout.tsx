@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
+  other: {
+    'color-scheme': 'dark light',
+  },
 }
 
 export default function RootLayout({
