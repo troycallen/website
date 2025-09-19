@@ -4,6 +4,7 @@ import { Inter, Space_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/lib/theme-context"
 import { ThemeToggle } from "@/components/theme-toggle"
+import Script from "next/script"
 
 const inter = Inter({ 
   subsets: ["latin"], 
@@ -39,6 +40,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${spaceMono.variable} font-mono bg-background text-foreground antialiased leading-relaxed`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3WDQST1X7T"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3WDQST1X7T');
+          `}
+        </Script>
         <ThemeProvider>
           {children}
           <ThemeToggle />
