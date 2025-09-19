@@ -54,8 +54,8 @@ export default function Home() {
         <div className="relative w-full aspect-4/5">
           {/* Profile pic */}
           <div
-            className="h-full w-full z-0 cursor-pointer perspective-1000"
-            onClick={() => setIsFlipped(true)}
+            className="h-full w-full z-0 cursor-pointer perspective-1000 transition-transform duration-500 hover:scale-110"
+            onClick={() => setIsFlipped(!isFlipped)}
           >
             <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
               <Image
@@ -108,21 +108,21 @@ export default function Home() {
         <div className="flex flex-row gap-16 lg:gap-20 items-center mb-16">
           {/* Profile pic */}
           <div
-            className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0 ocean-depth cursor-pointer perspective-1000"
-            onClick={() => setIsFlipped(true)}
+            className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0 ocean-depth cursor-pointer perspective-1000 transition-transform duration-500 hover:scale-110"
+            onClick={() => setIsFlipped(!isFlipped)}
           >
             <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
               <Image
                 src="/surf.jpg"
                 alt="Troy Allen surfing at 4"
                 fill
-                className="h-full w-full rounded-xl shadow-xl transition ease-in-out hover:scale-110 duration-500 object-cover absolute backface-hidden"
+                className="h-full w-full rounded-xl shadow-xl object-cover absolute backface-hidden"
               />
               <Image
                 src="/surf.png"
                 alt="Troy Allen surfing older"
                 fill
-                className="h-full w-full rounded-xl shadow-xl transition ease-in-out hover:scale-110 duration-500 object-cover absolute backface-hidden rotate-y-180"
+                className="h-full w-full rounded-xl shadow-xl object-cover absolute backface-hidden rotate-y-180"
               />
             </div>
           </div>
