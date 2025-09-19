@@ -55,7 +55,7 @@ export default function Home() {
           {/* Profile pic */}
           <div
             className="h-full w-full z-0 cursor-pointer perspective-1000"
-            onClick={() => setIsFlipped(!isFlipped)}
+            onClick={() => setIsFlipped(true)}
           >
             <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
               <Image
@@ -109,7 +109,7 @@ export default function Home() {
           {/* Profile pic */}
           <div
             className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0 ocean-depth cursor-pointer perspective-1000"
-            onClick={() => setIsFlipped(!isFlipped)}
+            onClick={() => setIsFlipped(true)}
           >
             <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
               <Image
