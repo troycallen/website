@@ -177,4 +177,22 @@ svg g {
   .ocean-gradient {
     background: linear-gradient(135deg, hsl(var(--primary)), hsl(200 80% 45%));
   }
+
+  /* 3D flip card effect */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
 } 

@@ -8,7 +8,7 @@ import { useTheme } from "@/lib/theme-context"
 import SpotifyNowPlaying from "@/components/spotify-now-playing"
 
 export default function Home() {
-  const [imageEffect, setImageEffect] = useState<boolean>(false)
+  const [isFlipped, setIsFlipped] = useState<boolean>(false)
   
   // Safe theme access with fallback
   let theme = 'dark'
@@ -53,14 +53,24 @@ export default function Home() {
         {/* Image container */}
         <div className="relative w-full aspect-4/5">
           {/* Profile pic */}
-          <div className="h-full w-full z-0">
-            <Image
-              src="/surf.jpg"
-              alt="Troy Allen"
-              fill
-              className="object-cover"
-              onClick={() => setImageEffect(true)}
-            />
+          <div
+            className="h-full w-full z-0 cursor-pointer perspective-1000"
+            onClick={() => setIsFlipped(!isFlipped)}
+          >
+            <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+              <Image
+                src="/surf.jpg"
+                alt="Troy Allen surfing at 4"
+                fill
+                className="object-cover absolute backface-hidden"
+              />
+              <Image
+                src="/surf.png"
+                alt="Troy Allen surfing older"
+                fill
+                className="object-cover absolute backface-hidden rotate-y-180"
+              />
+            </div>
           </div>
           {/* Bottom banner */}
           <div className="z-10 p-6 pt-12 absolute left-0 bottom-0 bg-gradient-to-t from-background/90 to-transparent w-full">
@@ -97,17 +107,24 @@ export default function Home() {
       <div className="hidden md:flex flex-col max-w-4xl">
         <div className="flex flex-row gap-16 lg:gap-20 items-center mb-16">
           {/* Profile pic */}
-          <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0 ocean-depth">
-            <Image
-              src="/surf.jpg"
-              alt="Troy Allen"
-              fill
-              className={`h-full w-full rounded-xl shadow-xl transition ease-in-out hover:scale-110 duration-500 hover:cursor-pointer object-cover ${
-                imageEffect ? "animate-pulse" : ""
-              }`}
-              onClick={() => setImageEffect(true)}
-              onAnimationEnd={() => setImageEffect(false)}
-            />
+          <div
+            className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0 ocean-depth cursor-pointer perspective-1000"
+            onClick={() => setIsFlipped(!isFlipped)}
+          >
+            <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+              <Image
+                src="/surf.jpg"
+                alt="Troy Allen surfing at 4"
+                fill
+                className="h-full w-full rounded-xl shadow-xl transition ease-in-out hover:scale-110 duration-500 object-cover absolute backface-hidden"
+              />
+              <Image
+                src="/surf.png"
+                alt="Troy Allen surfing older"
+                fill
+                className="h-full w-full rounded-xl shadow-xl transition ease-in-out hover:scale-110 duration-500 object-cover absolute backface-hidden rotate-y-180"
+              />
+            </div>
           </div>
 
           {/* Content */}
