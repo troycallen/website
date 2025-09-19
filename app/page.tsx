@@ -72,6 +72,7 @@ export default function Home() {
               />
             </div>
           </div>
+
           {/* Bottom banner */}
           <div className="z-10 p-6 pt-12 absolute left-0 bottom-0 bg-gradient-to-t from-background/90 to-transparent w-full">
             <div className="flex flex-col">
@@ -100,6 +101,11 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Click me text for mobile */}
+        <div className="text-left -mt-8 ml-2 text-muted-foreground text-xs">
+          p.s. click the image to time travel
         </div>
       </div>
 
@@ -177,6 +183,11 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Click me text for desktop */}
+        <div className="text-left -mt-14 ml-0 text-muted-foreground text-sm">
+          p.s. click the image to time travel
         </div>
 
         {/* GitHub Contribution Graph */}
