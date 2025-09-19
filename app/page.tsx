@@ -55,7 +55,7 @@ export default function Home() {
           {/* Profile pic */}
           <div className="h-full w-full z-0">
             <Image
-              src="/surf.png"
+              src="/surf.jpg"
               alt="Troy Allen"
               fill
               className="object-cover"
@@ -99,7 +99,7 @@ export default function Home() {
           {/* Profile pic */}
           <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0 ocean-depth">
             <Image
-              src="/surf.png"
+              src="/surf.jpg"
               alt="Troy Allen"
               fill
               className={`h-full w-full rounded-xl shadow-xl transition ease-in-out hover:scale-110 duration-500 hover:cursor-pointer object-cover ${
