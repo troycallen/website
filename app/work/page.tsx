@@ -50,20 +50,11 @@ export default function Work() {
     {
       role: "Research Assistant",
       company: "Florida State University",
-      period: "Jun 2021 - May 2022",
+      period: "Jan 2019 - May 2022",
       logo: "/fsu.jpg",
       size: "w-16 h-16",
-      skills: ["Python", "BERT", "NLP", "Discord API", "TSP"],
-      details: "Optimized patrol routes using TSP and researched hate speech using NLP"
-    },
-    {
-      role: "Undergraduate Researcher",
-      company: "Florida State University",
-      period: "Jan 2019 - May 2021",
-      logo: "/fsu.jpg",
-      size: "w-16 h-16",
-      skills: ["C++", "OpenCV", "Python", "NLP", "Database Design"],
-      details: "Conducted research on mass shootings, developed OCR and NLP pipeline, and built novel database of public mass shootings under Dr. Jillian Turanovic"
+      skills: ["Python", "BERT", "NLP", "Discord API", "TSP", "C++", "OpenCV", "Database Design"],
+      details: "Conducted research on mass shootings, developed OCR and NLP pipeline, and built novel database of public mass shootings under Dr. Jillian Turanovic. Later optimized patrol routes using TSP and researched hate speech using NLP"
     },
     {
       role: "Lead Teaching Assistant",
@@ -124,21 +115,9 @@ export default function Work() {
                         <p className="text-muted-foreground mb-2">{exp.company}</p>
                         
                         {isExpanded && (
-                          <div className="mt-6 space-y-4">
+                          <div className="mt-6">
                             <div className="text-muted-foreground leading-relaxed">
                               • {exp.details}
-                            </div>
-                            
-                            {/* Skills tags */}
-                            <div className="flex flex-wrap gap-2">
-                              {exp.skills.map((skill, skillIndex) => (
-                                <span 
-                                  key={skillIndex}
-                                  className="px-3 py-1 bg-muted rounded-full text-sm text-muted-foreground"
-                                >
-                                  {skill}
-                                </span>
-                              ))}
                             </div>
                           </div>
                         )}
