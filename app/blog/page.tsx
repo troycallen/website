@@ -31,7 +31,7 @@ export default function Blog() {
         </div>
 
         {/* Single blog post */}
-        <article className="border-b border-border pb-8 ocean-depth rounded-lg p-6 hover:bg-muted/10">
+        <article className="border-b border-border pb-8 ocean-depth rounded-lg p-6 hover:bg-muted/10 border border-border/20 bg-card/30">
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-4 text-sm text-secondary">
               <time>{post.date}</time>

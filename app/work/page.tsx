@@ -91,7 +91,7 @@ export default function Work() {
               return (
                 <div
                   key={index}
-                  className="cursor-pointer transition-all duration-200 ocean-depth rounded-lg p-4 hover:bg-muted/20"
+                  className="cursor-pointer transition-all duration-200 ocean-depth rounded-lg p-4 hover:bg-muted/20 border border-border/20 bg-card/30"
                   onClick={() => toggleExpanded(index)}
                 >
                   <div className="flex items-start justify-between py-2">
