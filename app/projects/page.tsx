@@ -44,7 +44,7 @@ export default function Projects() {
       logo: "/mem_alloc.jpg",
       size: "w-16 h-16",
       details: "High-performance memory allocator with cache optimization techniques and bitwise operations",
-      skills: ["C++", "Assembly", "Cache Optimization", "Memory Management", "Performance Optimization"],
+      skills: ["C++", "Assembly", "Cache Optimization", "Memory Management"],
       link: "#"
     },
     {
@@ -89,7 +89,7 @@ export default function Projects() {
       logo: "/MSExtractor.jpg",
       size: "w-16 h-16",
       details: "OCR and NLP pipeline for mass shootings analysis research using Tesseract and OpenCV",
-      skills: ["C++", "OCR", "NLP", "Data Processing", "Research Tools"],
+      skills: ["C++", "OCR", "NLP", "Data Processing"],
       link: "#"
     },
   ]

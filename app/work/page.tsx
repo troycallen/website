@@ -18,7 +18,7 @@ export default function Work() {
       logo: "/conduent.jpg",
       size: "w-16 h-16",
       skills: ["Python", "PyTorch", "TensorFlow", "Docker", "Machine Learning"],
-      details: "Working with the cybersecurity team to build defensive AI/ML models for threat detection",
+      details: "Working with the security team to build out LLM and AI infrastructure and tools for internal use",
     },
     {
       role: "Graduate AI Researcher",
@@ -36,7 +36,7 @@ export default function Work() {
       logo: "/trideum.jpg",
       size: "w-16 h-16",
       skills: ["Python", "Docker", "CUDA", "PyTorch", "NLP"],
-      details: "Built multimodal AI labeling platform using NLP, computer vision, and CUDA and optimized backend search",
+      details: "Built multimodal AI labeling platform using NLP, computer vision, and CUDA",
     },
     {
       role: "Machine Learning Engineer Intern",
