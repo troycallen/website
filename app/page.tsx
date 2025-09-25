@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-center items-center p-4 sm:p-24 bg-background text-foreground">
       {/* Top grey bar */}
-      <div className="w-full max-w-4xl h-1 bg-muted mb-16"></div>
+      <div className="w-full max-w-3xl h-1 bg-muted mb-16"></div>
 
       {/* Mobile */}
       <div className="md:hidden flex flex-col rounded-3xl shadow-2xl shadow-muted overflow-clip w-full max-w-[24em]">
@@ -110,11 +110,11 @@ export default function Home() {
       </div>
 
       {/* Web */}
-      <div className="hidden md:flex flex-col max-w-4xl">
-        <div className="flex flex-row gap-16 lg:gap-20 items-center mb-16">
+      <div className="hidden md:flex flex-col max-w-3xl">
+        <div className="flex flex-row gap-8 lg:gap-12 items-center mb-16">
           {/* Profile pic */}
           <div
-            className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex-shrink-0 ocean-depth cursor-pointer perspective-1000 transition-transform duration-500 hover:scale-110"
+            className="relative w-56 h-56 md:w-60 md:h-60 lg:w-64 lg:h-64 flex-shrink-0 ocean-depth cursor-pointer perspective-1000 transition-transform duration-500 hover:scale-110 -translate-y-1"
             onClick={() => setIsFlipped(!isFlipped)}
           >
             <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
@@ -134,17 +134,17 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div className="flex flex-col justify-between flex-1 max-w-2xl">
+          <div className="flex flex-col justify-between flex-1">
             <div className="flex flex-col gap-3 lg:gap-4">
               <div className="flex flex-col gap-3">
-                <div className="font-bold text-5xl lg:text-6xl xl:text-7xl text-foreground tracking-tight -ml-2 sand-glow">
+                <div className="font-bold text-4xl lg:text-5xl text-foreground tracking-tight -ml-2 sand-glow">
                   Troy Allen
                 </div>
-                <div className="font-semibold text-xl lg:text-2xl xl:text-3xl text-muted-foreground tracking-tight">
+                <div className="font-semibold text-lg lg:text-xl text-muted-foreground tracking-tight">
                   CS & ML @ Georgia Tech
                 </div>
               </div>
-              <div className="text-muted-foreground text-lg leading-relaxed">
+              <div className="text-muted-foreground leading-relaxed">
                 Interested in AI, ML, and scalability.
                 <br />
                 "Wherever you go, go with all your heart."
@@ -155,7 +155,7 @@ export default function Home() {
               <SpotifyNowPlaying />
             </div>
             </div>
-            
+
             <div className="flex flex-row justify-between items-center gap-8 mt-6">
               <div className="flex flex-row gap-2 items-center -ml-4">
                 {links.map((link, idx) => (
@@ -204,7 +204,7 @@ export default function Home() {
       </div>
 
       {/* Bottom grey bar */}
-      <div className="w-full max-w-4xl h-1 bg-muted mt-16"></div>
+      <div className="w-full max-w-3xl h-1 bg-muted mt-16"></div>
     </main>
   )
 }
