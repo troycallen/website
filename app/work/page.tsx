@@ -27,7 +27,7 @@ export default function Work() {
       logo: "/gt.jpg",
       size: "w-16 h-16",
       skills: ["Python", "NLP", "LLMs", "AI Agents"],
-      details: "Researching optimization and sustainability of local LLM and AI deployments under Dr. Nicholas Lytle",
+      details: "Researching optimization and sustainability of local LLM and AI deployments",
     },
     {
       role: "Software Engineer Intern",
@@ -54,7 +54,7 @@ export default function Work() {
       logo: "/fsu.jpg",
       size: "w-16 h-16",
       skills: ["Python", "BERT", "NLP", "Discord API", "TSP", "C++", "OpenCV", "Database Design"],
-      details: "Conducted research on mass shootings, developed OCR and NLP pipeline, and built novel database of public mass shootings under Dr. Jillian Turanovic. Later optimized patrol routes using TSP and researched hate speech using NLP"
+      details: "Conducted research on mass shootings, developed OCR and NLP pipeline, and built novel database of public mass shootings. Later optimized patrol routes using TSP and researched hate speech using NLP"
     },
     {
       role: "Lead Teaching Assistant",
