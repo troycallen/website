@@ -16,7 +16,7 @@ export default function Projects() {
       description: "Local LLM resource tracking and optimization",
       logo: "/envirollm.png",
       size: "w-16 h-16",
-      details: "Local LLM resource tracking and optimization tool with real-time monitoring and energy analysis",
+      details: "Local LLM benchmarking and optimization tool with real-time monitoring and task customization",
       skills: ["Python", "PyTorch", "TensorFlow", "Docker", "LLMs", "TypeScript"],
       link: "#"
     },
@@ -25,7 +25,7 @@ export default function Projects() {
       description: "Wordle but for soccer using computer vision",
       logo: "/goaldle.png",
       size: "w-16 h-16",
-      details: "Wordle-inspired game for guessing soccer players by analyzing CV-blurred videos",
+      details: "Wordle-inspired game for guessing goal scorers using computer vision",
       skills: ["Python", "TypeScript", "TensorFlow", "Computer Vision"],
       link: "#"
     },
@@ -34,7 +34,7 @@ export default function Projects() {
       description: "AI Literature Review Assistant",
       logo: "/litra.png",
       size: "w-16 h-16",
-      details: "AI-powered literature review assistant with concept mapping and summarization using Python",
+      details: "AI-powered literature review assistant with concept mapping and summarization",
       skills: ["Python", "GPT", "Llama", "NLP, Next.js"],
       link: "#"
     },
@@ -43,7 +43,7 @@ export default function Projects() {
       description: "Dynamic memory allocator in C++",
       logo: "/mem_alloc.jpg",
       size: "w-16 h-16",
-      details: "High-performance memory allocator with cache optimization techniques and bitwise operations",
+      details: "Custom memory allocator with cache optimization techniques and bitwise operations",
       skills: ["C++", "Assembly", "Cache Optimization", "Memory Management"],
       link: "#"
     },

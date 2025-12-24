@@ -80,7 +80,7 @@ export default function Home() {
                 Troy Allen
               </div>
               <div className="font-medium text-lg text-muted-foreground tracking-tight">
-                CS & ML @ Georgia Tech
+                AI/ML Software Engineer | Prev CS @ GT
               </div>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function Home() {
                   Troy Allen
                 </div>
                 <div className="font-semibold text-lg lg:text-xl text-muted-foreground tracking-tight">
-                  CS & ML @ Georgia Tech
+                  AI/ML Software Engineer | Prev CS @ GT
                 </div>
               </div>
               <div className="text-muted-foreground leading-relaxed">

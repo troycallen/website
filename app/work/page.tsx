@@ -12,9 +12,18 @@ export default function Work() {
   }
   const experiences = [
     {
-      role: "Software Engineer Intern",
+      role: "AI/ML Software Engineer",
+      company: "Trideum",
+      period: "Dec 2025 - Present",
+      logo: "/trideum.jpg",
+      size: "w-16 h-16",
+      skills: ["Python", "Docker", "Machine Learning"],
+      details: "Building multimodal AI applications and evaluating models for defense and intelligence clients",
+    },
+    {
+      role: "AI Software Engineer Intern",
       company: "Conduent",
-      period: "Aug 2025 - Present",
+      period: "Aug 2025 - Dec 2025",
       logo: "/conduent.jpg",
       size: "w-16 h-16",
       skills: ["Python", "PyTorch", "TensorFlow", "Docker", "Machine Learning"],
@@ -23,15 +32,15 @@ export default function Work() {
     {
       role: "Graduate AI Researcher",
       company: "Georgia Institute of Technology",
-      period: "Aug 2025 - Present",
+      period: "Aug 2025 - Dec 2025",
       logo: "/gt.jpg",
       size: "w-16 h-16",
       skills: ["Python", "NLP", "LLMs", "AI Agents"],
       details: "Researching optimization and sustainability of local LLM and AI deployments",
     },
     {
-      role: "Software Engineer Intern",
-      company: "Trideum Corporation",
+      role: "AI/ML Software Engineer Intern",
+      company: "Trideum",
       period: "Dec 2024 - Aug 2025",
       logo: "/trideum.jpg",
       size: "w-16 h-16",
@@ -45,7 +54,7 @@ export default function Work() {
       logo: "/shepherd_center.jpg",
       size: "w-16 h-16",
       skills: ["Python", "PyTorch", "Flask", "Redis", "Machine Learning"],
-      details: "Built neural networks and APIs to aid clinicians in pressure ulcer prediction in spinal cord injury patients"
+      details: "Working with the GT REAR Lab and Shepherd Center in pressure ulcer prediction in spinal cord injury patients"
     },
     {
       role: "Research Assistant",
