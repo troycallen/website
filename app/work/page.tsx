@@ -31,7 +31,7 @@ export default function Work() {
     },
     {
       role: "Graduate AI Researcher",
-      company: "Georgia Institute of Technology",
+      company: "Georgia Institute of Technology - CROCS Lab",
       period: "Aug 2025 - Dec 2025",
       logo: "/gt.jpg",
       size: "w-16 h-16",
@@ -49,9 +49,9 @@ export default function Work() {
     },
     {
       role: "Machine Learning Engineer Intern",
-      company: "Shepherd Center",
+      company: "Georgia Institute of Technology - REAR Lab",
       period: "May 2024 - Dec 2024",
-      logo: "/shepherd_center.jpg",
+      logo: "/gt.jpg",
       size: "w-16 h-16",
       skills: ["Python", "PyTorch", "Flask", "Redis", "Machine Learning"],
       details: "Working with the GT REAR Lab and Shepherd Center in pressure ulcer prediction in spinal cord injury patients"
