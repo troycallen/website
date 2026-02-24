@@ -30,7 +30,7 @@ export default function SpotifyAuth() {
 
         <button
           onClick={handleAuth}
-          className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+          className="bg-foreground text-background hover:bg-muted-foreground px-6 py-3 rounded-lg font-medium transition-colors"
         >
           Re-authenticate with Spotify
         </button>

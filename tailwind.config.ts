@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)'],
-        mono: ['var(--font-space-mono)', 'monospace'],
+        serif: ['Georgia', 'Times New Roman', 'serif'],
+        mono: ['monospace'],
       },
       colors: {
         background: "var(--background)",

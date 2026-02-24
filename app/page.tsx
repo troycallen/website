@@ -1,210 +1,55 @@
 "use client"
 
 import Image from "next/image"
-import { Github, Linkedin, Mail } from "lucide-react"
-import Link from "next/link"
-import { useState } from "react"
-import { useTheme } from "@/lib/theme-context"
 import SpotifyNowPlaying from "@/components/spotify-now-playing"
 
 export default function Home() {
-  const [isFlipped, setIsFlipped] = useState<boolean>(false)
-  
-  // Safe theme access with fallback
-  let theme = 'dark'
-  try {
-    theme = useTheme().theme
-  } catch {
-    // Fallback if theme context is not available
-    theme = 'dark'
-  }
-
-  const links = [
-    { text: "work", link: "/work" },
-    { text: "projects", link: "/projects" },
-    { text: "blog", link: "/blog" },
-  ]
-
-  const socials = [
-    {
-      icon: <Github className="w-6 h-6" />,
-      link: "https://github.com/troycallen",
-      platform: "github",
-    },
-    {
-      icon: <Linkedin className="w-6 h-6" />,
-      link: "https://linkedin.com/in/troycallen",
-      platform: "linkedin",
-    },
-    {
-      icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>,
-      link: "mailto:troycallen.dev@gmail.com",
-      platform: "email",
-    },
-  ]
-
   return (
-    <main className="flex min-h-screen flex-col justify-center items-center p-4 sm:p-24 bg-background text-foreground">
-      {/* Top grey bar */}
-      <div className="w-full max-w-3xl h-1 bg-muted mb-16"></div>
+    <main className="min-h-screen bg-background text-foreground">
+      <div className="mono-doc">
+        <h1 className="mono-title">TROY ALLEN</h1>
+        <p className="mono-subtitle"></p>
 
-      {/* Mobile */}
-      <div className="md:hidden flex flex-col rounded-3xl shadow-2xl shadow-muted overflow-clip w-full max-w-[24em]">
-        {/* Image container */}
-        <div className="relative w-full aspect-4/5">
-          {/* Profile pic */}
-          <div
-            className="h-full w-full z-0 cursor-pointer perspective-1000 transition-transform duration-500 hover:scale-110"
-            onClick={() => setIsFlipped(!isFlipped)}
-          >
-            <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
-              <Image
-                src="/surf.jpg"
-                alt="Troy Allen surfing at 4"
-                fill
-                className="object-cover absolute backface-hidden"
-              />
-              <Image
-                src="/surf.png"
-                alt="Troy Allen surfing older"
-                fill
-                className="object-cover absolute backface-hidden rotate-y-180"
-              />
+        <div className="mono-hero">
+          <div className="mono-photo-box">
+            <div className="relative w-32 h-32 overflow-hidden grayscale">
+              <Image src="/surf.jpg" alt="Troy Allen" fill className="object-cover" />
             </div>
           </div>
-
-          {/* Bottom banner */}
-          <div className="z-10 p-6 pt-12 absolute left-0 bottom-0 bg-gradient-to-t from-background/90 to-transparent w-full">
-            <div className="flex flex-col">
-              <div className="font-semibold text-3xl text-foreground tracking-tight">
-                Troy Allen
-              </div>
-              <div className="font-medium text-lg text-muted-foreground tracking-tight">
-                AI/ML Software Engineer | Prev CS @ GT
-              </div>
-            </div>
-          </div>
-
-          {/* Top bar */}
-          <div className="z-10 p-6 absolute left-0 top-0 right-0">
-            <div className="flex flex-row gap-4 justify-between items-start">
-              <div className="flex flex-col gap-3 items-center">
-                {socials.map((social, idx) => (
-                  <a
-                    key={idx}
-                    href={social.link}
-                    className="bg-background/50 hover:bg-background/70 text-foreground p-2 rounded-full transition ease-in-out hover:scale-110 hover:-rotate-12"
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Click me text for mobile */}
-        <div className="text-left -mt-8 ml-2 text-muted-foreground text-xs">
-          p.s. click the image to time travel
-        </div>
-      </div>
-
-      {/* Web */}
-      <div className="hidden md:flex flex-col max-w-3xl">
-        <div className="flex flex-row gap-8 lg:gap-12 items-center mb-16">
-          {/* Profile pic */}
-          <div
-            className="relative w-56 h-56 md:w-60 md:h-60 lg:w-64 lg:h-64 flex-shrink-0 ocean-depth cursor-pointer perspective-1000 transition-transform duration-500 hover:scale-110 -translate-y-1"
-            onClick={() => setIsFlipped(!isFlipped)}
-          >
-            <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
-              <Image
-                src="/surf.jpg"
-                alt="Troy Allen surfing at 4"
-                fill
-                className="h-full w-full rounded-xl shadow-xl object-cover absolute backface-hidden"
-              />
-              <Image
-                src="/surf.png"
-                alt="Troy Allen surfing older"
-                fill
-                className="h-full w-full rounded-xl shadow-xl object-cover absolute backface-hidden rotate-y-180"
-              />
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="flex flex-col justify-between flex-1">
-            <div className="flex flex-col gap-3 lg:gap-4">
-              <div className="flex flex-col gap-3">
-                <div className="font-bold text-4xl lg:text-5xl text-foreground tracking-tight -ml-2 sand-glow">
-                  Troy Allen
-                </div>
-                <div className="font-semibold text-lg lg:text-xl text-muted-foreground tracking-tight">
-                  AI/ML Software Engineer | Prev CS @ GT
-                </div>
-              </div>
-              <div className="text-muted-foreground leading-relaxed">
-                Interested in AI, ML, and scalability.
-                <br />
-                "Wherever you go, go with all your heart."
-              </div>
-
-            {/* Spotify Now Playing */}
-            <div className="mt-3">
+          <div className="mono-personal">
+            <ul className="mono-list">
+              <li>Github: <a href="https://github.com/troycallen" target="_blank" rel="noreferrer noopener">troycallen</a></li>
+              <li>LinkedIn: <a href="https://linkedin.com/in/troycallen" target="_blank" rel="noreferrer noopener">troycallen</a></li>
+              <li>Email: <a href="mailto:troycallen.dev@gmail.com">troycallen.dev@gmail.com</a></li>
+            </ul>
+            <div className="mono-spotify">
+              <span className="mono-spotify-label">Now playing:</span>{' '}
               <SpotifyNowPlaying />
             </div>
-            </div>
-
-            <div className="flex flex-row justify-between items-center gap-8 mt-6">
-              <div className="flex flex-row gap-2 items-center -ml-4">
-                {links.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    href={link.link}
-                    className="text-primary hover:text-accent hover:bg-muted px-4 py-2 rounded-lg transition font-normal hover:scale-105"
-                  >
-                    {link.text}
-                  </Link>
-                ))}
-              </div>
-              <div className="flex flex-row gap-4 items-center">
-                {socials.map((social, idx) => (
-                  <a
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    key={idx}
-                    href={social.link}
-                    className="text-muted-foreground hover:text-foreground hover:bg-muted p-3 rounded-lg transition hover:scale-105"
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
-        {/* Click me text for desktop */}
-        <div className="text-left -mt-14 ml-0 text-muted-foreground text-sm">
-          p.s. click the image to time travel
-        </div>
+        <h2 className="mono-section-title" id="about">ABOUT ME</h2>
+        <p className="mono-prose">
+          Hi! I&apos;m Troy, a software engineer at Google working on ML systems for YouTube.
+        </p>
+        <p className="mono-prose">
+          I come from a research-heavy background and recently finished my Master&apos;s at Georgia Tech, where I was fortunate enough to work in NLP and ML across a few labs. Most of my engineering experience has been in applied AI/ML, but I&apos;ve also dabbled in cybersecurity and infrastructure development.
+        </p>
+        <p className="mono-prose">
+          I&apos;m broadly interested in machine learning, scalability, and working closely to theory. Outside of work, I enjoy surfing, soccer, reading, and competitive games.
+        </p>
 
-        {/* GitHub Contribution Graph */}
-        <div className="w-full mt-12">
-          <Image
-            src={theme === 'dark' ? "https://ghchart.rshah.org/2a4b5c/troycallen" : "https://ghchart.rshah.org/2d5a87/troycallen"}
-            alt="Troy's GitHub Contribution Graph"
-            width={735}
-            height={112}
-            className="rounded-lg w-full opacity-90"
-            unoptimized
-          />
-        </div>
+
+        <h2 className="mono-section-title" id="blog">BLOG / MISC</h2>
+        <p className="mono-prose mono-muted">
+          I will surely fill this out some time in the next decade
+        </p>
+
+        <footer className="mono-footer">
+          Troy Allen 2026 | Last updated: 2026-02
+        </footer>
       </div>
-
-      {/* Bottom grey bar */}
-      <div className="w-full max-w-3xl h-1 bg-muted mt-16"></div>
     </main>
   )
 }

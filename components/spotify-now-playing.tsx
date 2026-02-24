@@ -39,8 +39,8 @@ export default function SpotifyNowPlaying() {
   if (loading) {
     return (
       <div className="flex items-center gap-3 text-muted-foreground">
-        <div className="w-4 h-4 rounded-full bg-muted animate-pulse"></div>
-        <span className="text-sm">Loading...</span>
+        <div className="w-4 h-4 rounded-full bg-muted animate-pulse" />
+        <span>Loading...</span>
       </div>
     )
   }
@@ -51,7 +51,7 @@ export default function SpotifyNowPlaying() {
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
         </svg>
-        <span className="text-sm">Not playing</span>
+        <span>Not playing</span>
       </div>
     )
   }
@@ -64,14 +64,14 @@ export default function SpotifyNowPlaying() {
       className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
     >
       <div className="relative flex items-center">
-        <svg className="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+        <svg className="w-4 h-4 text-foreground" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
         </svg>
-        <div className="ml-1 w-1 h-1 bg-green-500 rounded-full animate-pulse"></div>
+        <div className="ml-1 w-1 h-1 bg-foreground rounded-full animate-pulse" />
       </div>
 
       <div className="min-w-0">
-        <div className="text-sm font-medium text-foreground truncate group-hover:text-primary transition-colors">
+        <div className="font-medium text-foreground truncate group-hover:text-muted-foreground transition-colors">
           {track.title} <span className="text-muted-foreground font-normal">by {track.artist}</span>
         </div>
       </div>
