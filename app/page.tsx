@@ -34,10 +34,10 @@ export default function Home() {
           Hi! I&apos;m Troy, a software engineer at Google working on ML systems for YouTube.
         </p>
         <p className="mono-prose">
-          I come from a research-heavy background and recently finished my Master&apos;s at Georgia Tech, where I was fortunate enough to work in NLP and ML across a few labs. Most of my engineering experience has been in applied AI/ML, but I&apos;ve also dabbled in cybersecurity and infrastructure development.
+          I come from a research-heavy background and recently finished my Master&apos;s at Georgia Tech, where I was fortunate enough to conduct research in NLP and ML across a few labs. Most of my engineering experience has been in applied AI/ML, but I&apos;ve also dabbled in cybersecurity and infrastructure development.
         </p>
         <p className="mono-prose">
-          I&apos;m broadly interested in machine learning, scalability, and working closely to theory. Outside of work, I enjoy surfing, soccer, reading, and competitive games.
+          I&apos;m broadly interested in AI, machine learning, scalability, and working closely to theory. Outside of work, I enjoy surfing, soccer, reading, and competitive games.
         </p>
 
 
